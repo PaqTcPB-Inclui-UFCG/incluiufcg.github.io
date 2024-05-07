@@ -19,7 +19,6 @@ function GraficoEvolucaoAlunosDeficientesPorCurso({ highContrast }) {
 
         const alunosDeficientes = dados.slice(2).filter((row) => row[2] !== undefined && row[2] !== '');
 
-        // Processamento dos dados de evolução por curso
         const evolucaoPorCurso = {};
         alunosDeficientes.forEach((aluno) => {
           const curso = aluno[5];
@@ -38,7 +37,6 @@ function GraficoEvolucaoAlunosDeficientesPorCurso({ highContrast }) {
           evolucaoPorCurso[curso][chave].add(aluno[0]); // Adiciona a matrícula ao conjunto
         });
 
-        // Ordenar as chaves (períodos) por ordem crescente
         Object.keys(evolucaoPorCurso).forEach((curso) => {
           const dadosCurso = evolucaoPorCurso[curso];
           evolucaoPorCurso[curso] = Object.keys(dadosCurso).sort((a, b) => {

@@ -370,28 +370,6 @@ const Signup = () => {
               Cadastrar
             </Button>
           </form>
-          {/* </Typography>
-        <Typography variant="body1" paragraph>
-          Cadastre-se usando sua conta do Google.
-        </Typography>
-        <GoogleLogin
-          clientId="seu-client-id-do-google"
-          onSuccess={handleGoogleSignupSuccess}
-          onFailure={handleGoogleSignupFailure}
-          render={(renderProps) => (
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              fullWidth
-              className={classes.googleButton}
-              onClick={() => handleGoogleSignupClick(renderProps)}
-              disabled={renderProps.disabled || loading} 
-            >
-              {loading ? <CircularProgress size={24} className={classes.loadingIcon} /> : 'Cadastrar com Google'}
-            </Button>
-          )} */}
-          {/* /> */}
         </Paper>
       </Container>
       </div>

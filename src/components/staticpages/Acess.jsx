@@ -28,9 +28,7 @@ const About = () => {
     });
 
     const [highContrast, setHighContrast] = useState();
-    // const toggleHighContrast = () => {
-    //   setHighContrast(prevHighContrast => !prevHighContrast); 
-    // };
+   
 
     return (
         <ThemeProvider theme={theme}>

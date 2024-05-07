@@ -227,7 +227,7 @@ export default function Header({ highContrast, setHighContrast }) {
                 <Toolbar>
                     <Typography variant="h6" sx={{ ...titleStyle, ...(isMobile && { fontSize: '4vw' }) }}
                         component={Link} to="/">
-                        EducaUni
+                        IncluiUFCG
                     </Typography>
                     {isMobile ? (
                         <IconButton

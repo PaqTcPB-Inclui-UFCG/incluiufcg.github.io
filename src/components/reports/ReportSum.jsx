@@ -24,17 +24,15 @@ function TotalAlunosDeficientes({ highContrast }) {
     
         console.log('Dados da planilha:', dados);
     
-        // Filtrar e contar matrículas únicas dos alunos deficientes
         const matriculasUnicas = new Set();
         dados.slice(2).forEach((row) => {
           if (row[2] !== undefined && row[2] !== '') {
-            matriculasUnicas.add(row[0]); // Adicionar matrícula ao conjunto
+            matriculasUnicas.add(row[0]); 
           }
         });
     
         console.log('Matrículas únicas:', Array.from(matriculasUnicas));
     
-        // Calcular o total de alunos deficientes (número de matrículas únicas)
         const total = matriculasUnicas.size;
         console.log('Total de alunos deficientes:', total);
         setTotalAlunosDeficientes(total);
@@ -55,7 +53,6 @@ function TotalAlunosDeficientes({ highContrast }) {
     setPaginaAtual(1);
   };
 
-  // Agrupamento dos dados por curso e contagem de deficientes
   const cursosDeficientes = dados.slice(2).reduce((accumulator, item) => {
     const curso = item[5];
     if (accumulator[curso]) {
@@ -66,7 +63,6 @@ function TotalAlunosDeficientes({ highContrast }) {
     return accumulator;
   }, {});
 
-  // Preparação dos dados para o DataGrid
   const totalGeral = Object.values(cursosDeficientes).reduce((total, count) => total + count, 0);
   const rows = Object.keys(cursosDeficientes).map((curso, index) => ({
     id: index,
@@ -75,7 +71,6 @@ function TotalAlunosDeficientes({ highContrast }) {
     percentual: ((cursosDeficientes[curso] / totalGeral) * 100).toFixed(2),
   }));
 
-  // Colunas do DataGrid
   const columns = [
     { field: 'curso', headerName: 'Curso', width: 200 },
     { field: 'totalDeficientes', headerName: 'Total de Deficientes', width: 200 },

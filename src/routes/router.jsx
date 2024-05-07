@@ -5,8 +5,6 @@ import About from "../components/staticpages/About";
 import Login from "../components/login/Login";
 import Signup from "../components/Signup";
 import Article from "../components/articles/Article";
-import Reports from "../components/Reports";
-import EnrollmentReport from "../components/EnrollmentReport";
 import ArticleForm from "../components/articles/ArticleForm";
 import SearchTerms from "../components/knowledge/SearchTerms";
 import UserProfile from "../components/user/User";

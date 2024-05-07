@@ -21,21 +21,17 @@ function AlunosMultiDeficiencia({ highContrast }) {
                 const worksheet = workbook.Sheets[firstSheetName];
                 const dados = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-                // Estrutura de dados para armazenar as deficiências de cada aluno
                 const alunosDeficiencias = {};
 
-                // Estrutura de dados para armazenar a distribuição de alunos por curso e campus
                 const distribuicaoPorCurso = {};
                 const distribuicaoPorCampus = {};
 
-                // Iterar sobre os dados da planilha para agrupar as deficiências de cada aluno
                 dados.slice(2).forEach((row) => {
                     const matricula = row[0];
                     const deficiencia = row[2];
                     const curso = row[5];
                     const campus = row[3];
 
-                    // Contabilizar alunos com múltiplas deficiências
                     if (!alunosDeficiencias[matricula]) {
                         alunosDeficiencias[matricula] = [];
                     }
@@ -44,7 +40,6 @@ function AlunosMultiDeficiencia({ highContrast }) {
                         alunosDeficiencias[matricula].push(deficiencia);
                     }
 
-                    // Contabilizar distribuição de alunos por curso
                     if (alunosDeficiencias[matricula].length > 1) {
                         if (!distribuicaoPorCurso[curso]) {
                             distribuicaoPorCurso[curso] = 0;
@@ -52,7 +47,6 @@ function AlunosMultiDeficiencia({ highContrast }) {
                         distribuicaoPorCurso[curso]++;
                     }
 
-                    // Contabilizar distribuição de alunos por campus
                     if (alunosDeficiencias[matricula].length > 1) {
                         if (!distribuicaoPorCampus[campus]) {
                             distribuicaoPorCampus[campus] = 0;
@@ -61,12 +55,10 @@ function AlunosMultiDeficiencia({ highContrast }) {
                     }
                 });
 
-                // Filtrar os alunos com mais de uma deficiência
                 const alunosMultiDeficiencia = Object.entries(alunosDeficiencias)
                     .filter(([_, deficiencias]) => deficiencias.length > 1)
                     .map(([_, deficiencias]) => deficiencias.sort()); // Apenas as deficiências compostas, ordenadas alfabeticamente
 
-                // Contar ocorrências de cada combinação única de deficiências
                 const ocorrenciasUnicas = [...new Set(alunosMultiDeficiencia.map((deficiencias) => deficiencias.join(', ')))];
                 const ocorrencias = ocorrenciasUnicas.map((deficiencias, index) => {
                     const deficienciasArray = deficiencias.split(', ');
@@ -79,15 +71,12 @@ function AlunosMultiDeficiencia({ highContrast }) {
                 });
                 setOcorrencias(ocorrencias);
 
-                // Calcular o total de alunos
                 const total = ocorrencias.reduce((acc, cur) => acc + cur.quantidade, 0);
                 setTotalAlunos(total);
 
-                // Formatar dados para o gráfico de distribuição por curso
                 const distribuicaoCursoFormatada = Object.entries(distribuicaoPorCurso).map(([curso, quantidade]) => [curso, quantidade]);
                 setDistribuicaoCurso([['Curso', 'Quantidade de Alunos']].concat(distribuicaoCursoFormatada));
 
-                // Formatar dados para o gráfico de distribuição por campus
                 const distribuicaoCampusFormatada = Object.entries(distribuicaoPorCampus).map(([campus, quantidade]) => [campus, quantidade]);
                 setDistribuicaoCampus([['Campus', 'Quantidade de Alunos']].concat(distribuicaoCampusFormatada));
             } catch (error) {

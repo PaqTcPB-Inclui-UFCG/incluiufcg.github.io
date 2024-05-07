@@ -20,12 +20,11 @@ function GraficoEvolucaoAlunosDeficientes({ highContrast }) {
 
         const alunosDeficientes = dados.slice(2).filter((row) => row[2] !== undefined && row[2] !== '');
 
-        // Processamento dos dados de evolução por campus
         const evolucaoPorCampus = {};
         alunosDeficientes.forEach((aluno) => {
           const campus = aluno[3];
           const ano = parseInt(aluno[1]);
-          const trimestre = aluno[1].split('.')[1]; // Trimestre como string
+          const trimestre = aluno[1].split('.')[1]; 
           const chave = `${ano}.${trimestre}`;
 
           if (!evolucaoPorCampus[campus]) {
@@ -36,10 +35,9 @@ function GraficoEvolucaoAlunosDeficientes({ highContrast }) {
             evolucaoPorCampus[campus][chave] = new Set();
           }
 
-          evolucaoPorCampus[campus][chave].add(aluno[0]); // Adiciona a matrícula ao conjunto
+          evolucaoPorCampus[campus][chave].add(aluno[0]); 
         });
 
-        // Ordenar as chaves (períodos) por ordem crescente
         Object.keys(evolucaoPorCampus).forEach((campus) => {
           const dadosCampus = evolucaoPorCampus[campus];
           evolucaoPorCampus[campus] = Object.keys(dadosCampus).sort((a, b) => {

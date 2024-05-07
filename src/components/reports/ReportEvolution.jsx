@@ -22,7 +22,7 @@ function GraficoEvolucaoAlunosDeficientes({ highContrast }) {
         const contagemPorAno = {};
         alunosDeficientes.forEach((aluno) => {
           const ano = parseInt(aluno[1]);
-          const trimestre = aluno[1].split('.')[1]; // Trimestre como string
+          const trimestre = aluno[1].split('.')[1]; 
           const chave = `${ano}.${trimestre}`;
           contagemPorAno[chave] = (contagemPorAno[chave] || 0) + 1;
         });

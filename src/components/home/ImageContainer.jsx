@@ -80,7 +80,7 @@ const ImageContainer = ({ highContrast }) => {
         alt="Background"
       />
       <div className={classes.headerText}>
-      EducaUni
+      IncluiUFCG
       </div>
       <div className={classes.description}>
         Explore nosso acervo digital, repleto de documentos e análises de dados voltados para promover uma educação inclusiva.

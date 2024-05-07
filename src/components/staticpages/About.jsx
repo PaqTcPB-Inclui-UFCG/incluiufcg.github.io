@@ -28,9 +28,7 @@ const About = () => {
   });
 
   const [highContrast, setHighContrast] = useState();
-  // const toggleHighContrast = () => {
-  //   setHighContrast(prevHighContrast => !prevHighContrast); 
-  // };
+
 
   useEffect(() => {
     const storedHighContrast = localStorage.getItem('highContrast');
