@@ -23,6 +23,8 @@ function TotalAlunosDeficientes({ highContrast }) {
         const dados = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
     
         console.log('Dados da planilha:', dados);
+
+        setDados(dados);
     
         const matriculasUnicas = new Set();
         dados.slice(2).forEach((row) => {

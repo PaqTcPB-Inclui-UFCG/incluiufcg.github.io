@@ -76,13 +76,12 @@ function ComponentePrincipal() {
                 {isRendered && (
                   <>
                     <ReportEvolution highContrast={highContrast} />
-                    <ReportTrend highContrast={highContrast} />
                     <Divider variant="middle" style={{ margin: '1rem 0',   marginTop: '2rem', backgroundColor: highContrast ? "#fff": "inherit" }} />
                     <Typography variant="h5" paragraph style={{ marginBottom: '1rem',color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
                       Evolução da Matrícula de Estudantes com PCD por Período e por Campus e Curso
                     </Typography >
                     <Typography variant="body1" paragraph style={{ marginBottom: '1rem',color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
-                    Explore a Evolução da Matrícula de Estudantes com PCD (Pessoas com Deficiência) na UFCG (Universidade Federal de Campina Grande), detalhada por Trimestre, Campus e Curso. Este conjunto de dados abrange registros a partir de 2015, fornecendo insights valiosos sobre a inclusão e distribuição dos alunos com PCD ao longo do tempo e em diferentes áreas de estudo dentro da universidade.                    </Typography >
+                    Explore a Evolução da Matrícula de Estudantes com PCD (Pessoas com Deficiência) na UFCG (Universidade Federal de Campina Grande), detalhada por semestre, Campus e Curso. Este conjunto de dados abrange registros a partir de 2015, fornecendo insights valiosos sobre a inclusão e distribuição dos alunos com PCD ao longo do tempo e em diferentes áreas de estudo dentro da universidade.                    </Typography >
                     <Grid container spacing={2}>
                       <Grid item xs={6}>
                         <ReportsEvolutionPerCampus highContrast={highContrast} />

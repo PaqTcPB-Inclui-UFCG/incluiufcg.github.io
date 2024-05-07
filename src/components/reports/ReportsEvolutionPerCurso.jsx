@@ -23,7 +23,7 @@ function GraficoEvolucaoAlunosDeficientesPorCurso({ highContrast }) {
         alunosDeficientes.forEach((aluno) => {
           const curso = aluno[5];
           const ano = parseInt(aluno[1]);
-          const trimestre = aluno[1].split('.')[1]; // Trimestre como string
+          const trimestre = aluno[1].split('.')[1]; 
           const chave = `${ano}.${trimestre}`;
 
           if (!evolucaoPorCurso[curso]) {
