@@ -109,6 +109,7 @@ const ArticleForm = () => {
       setArticlePublished(true);
       window.location.href = `/artigos/artigo=${articleResponse.data.id}`;
     } catch (error) {
+      alert('Erro ao publicar o artigo ou os anexos: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
       console.error('Erro ao publicar o artigo ou os anexos:', error);
       setArticlePublished(false);
     }

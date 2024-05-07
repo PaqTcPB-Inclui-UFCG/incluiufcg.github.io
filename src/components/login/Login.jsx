@@ -76,6 +76,7 @@ const Login = () => {
 
     } catch (error) {
       console.error('Erro ao fazer login:', error);
+      alert('Erro no login: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
     } finally {
       setLoading(false);
     }
@@ -93,6 +94,7 @@ const Login = () => {
       await handleLoginSuccess(token);
     } catch (error) {
       console.error('Erro ao fazer login:', error);
+      alert('Erro no login: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
     } finally {
       setLoading(false);
     }

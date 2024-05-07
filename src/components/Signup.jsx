@@ -152,6 +152,8 @@ const Signup = () => {
       console.log('Usuário cadastrado com sucesso');
     } catch (error) {
       console.error('Erro ao cadastrar usuário:', error.message);
+      alert('Erro no cadastro: ' + error.message + '/nCaso o Erro persista, entre em contato com administrador');
+
     } finally {
       setLoading(false);
       await handleLogin(formData.email, formData.password);
@@ -180,6 +182,7 @@ const Signup = () => {
       window.location.href = '/meu-perfil';
     } catch (error) {
       console.error('Erro ao fazer login:', error);
+      alert('Erro no cadastro: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
     }
   };
   

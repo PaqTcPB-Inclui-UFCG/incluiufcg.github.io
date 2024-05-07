@@ -84,6 +84,8 @@ const ArticleForm = () => {
 
     } catch (error) {
       console.error('Erro ao obter o artigo:', error);
+      alert('Erro ao obter o artigo: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
+
     }
   };
   useEffect(() => {
@@ -96,6 +98,7 @@ const ArticleForm = () => {
         console.log('attachments:', attachments);
       })
       .catch(error => {
+        alert('Erro ao buscar os anexos do artigo: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
         console.error('Erro ao buscar os anexos do artigo:', error);
       });
   };
@@ -105,6 +108,7 @@ const ArticleForm = () => {
       const response = await axios.get(ENDPOINTS.articles.getAllTags);
       setTagsOptions(response.data);
     } catch (error) {
+      alert('Erro ao buscar as tags: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
       console.error('Erro ao buscar as tags:', error);
     }
   };
@@ -142,6 +146,7 @@ const ArticleForm = () => {
       console.log('Artigo atualizado com sucesso');
       window.location.href = `/artigos/artigo=${articleId}`;
     } catch (error) {
+      alert('Erro ao atualizar o artigo: ' + error + '/nCaso o Erro persista, entre em contato com administrador');
       console.error('Erro ao atualizar o artigo:', error);
     }
   };
