@@ -11,7 +11,7 @@ Certifique-se de ter o Docker instalado em sua máquina. Você pode instalá-lo 
 1. **Clone este repositório:**
    
    ```bash
-   git clone https://github.com/Adptare/Front-End-Adptare.git
+   git clone [https://github.com/Adptare/Front-End-Adptare.git](https://github.com/IncluiUFCG/Front-End-IncluiUFCG.git)
    ```
 
 2. **Navegue até o diretório do projeto de front-end:**
