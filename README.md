@@ -1,6 +1,4 @@
-
-
-# Guia de Uso: Docker para Front-end da Aplicação Adptare
+# Guia de Uso IncluiUFCG: Docker para Front-end da Aplicação Adptare
 
 Este guia fornecerá instruções passo a passo para configurar e executar o contêiner Docker para o front-end da aplicação Adptare usando Docker.
 
