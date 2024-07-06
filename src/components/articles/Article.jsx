@@ -96,7 +96,7 @@ const Article = () => {
   const handleLike = () => {
     axios.get(ENDPOINTS.articles.likeArticle(articleId), {})
       .then(response => {
-        setLiked(!liked);
+        setLiked(response.data);
       })
       .catch(error => {
         console.log('Erro ao curtir o post!')
