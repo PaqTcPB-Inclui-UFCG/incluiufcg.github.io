@@ -14,7 +14,6 @@ const ENDPOINTS = {
         // atualizaçoes
         likeArticle: (articleId) => `${BASE_URL}api/articles/${articleId}/like`
 
-
     },
     attachments: {
         uploadAttachment: (articleId) => `${BASE_URL}api/attachments?articleId=${articleId}`,

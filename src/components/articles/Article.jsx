@@ -9,8 +9,6 @@ import { useParams } from 'react-router-dom';
 import { useHotkeys } from 'react-hotkeys-hook';
 import ENDPOINTS from '../../endPoints';
 
-
-
 const Article = () => {
   const theme = createTheme({
     typography: {
@@ -94,15 +92,27 @@ const Article = () => {
 
   // curte o artigo
   const handleLike = () => {
-    axios.get(ENDPOINTS.articles.likeArticle(articleId), {})
+    const token = sessionStorage.getItem('token');
+  
+    axios.put(ENDPOINTS.articles.likeArticle(articleId),
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+      )
+      
       .then(response => {
-        setLiked(response.data);
+        setLiked(response.data); 
       })
       .catch(error => {
-        console.log('Erro ao curtir o post!')
-      })
+        console.error('Erro:', error);
+       
+      });
   };
-
+  
+  
+  
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
