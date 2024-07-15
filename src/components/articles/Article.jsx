@@ -20,6 +20,7 @@ const Article = () => {
   });
 
   const [liked, setLiked] = useState(false);
+  const [countLike, setCountLike] = useState(0);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [articleData, setArticleData] = useState(null);
   const [attachments, setAttachments] = useState([]);
@@ -46,6 +47,7 @@ const Article = () => {
       axios.get(ENDPOINTS.articles.getArticleById(articleId))
         .then(response => {
           setArticleData(response.data);
+          setCountLike(response.data.Favorite);
           fetchAttachments();
         })
         .catch(error => {
@@ -93,7 +95,12 @@ const Article = () => {
   // curte o artigo
   const handleLike = () => {
     const token = sessionStorage.getItem('token');
-  
+
+    if (!token){
+     alert('Faça login para curtir um artigo!');
+      return;
+    }
+
     axios.put(ENDPOINTS.articles.likeArticle(articleId),
         {
           headers: {
@@ -109,6 +116,7 @@ const Article = () => {
         console.error('Erro:', error);
        
       });
+    
   };
   
   
@@ -194,7 +202,7 @@ const Article = () => {
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <IconButton onClick={handleLike} sx={{ color: highContrast ? "#ffffff" : "inherit" }}>
-                    {liked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}
+                    {liked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}{countLike}
                   </IconButton>
                 </Grid>
                 <Grid item>
