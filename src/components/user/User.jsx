@@ -101,6 +101,7 @@ const UserProfile = () => {
   
     try {
       const user_id = sessionStorage.getItem('userId');
+     
       const token = sessionStorage.getItem('token');
   
       if (!user_id || !token) {

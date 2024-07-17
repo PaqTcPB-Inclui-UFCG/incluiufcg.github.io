@@ -41,6 +41,8 @@ const Article = () => {
 
 
   const articleId = query.articleID.split('=')[1];
+ 
+  
 
   useEffect(() => {
     const fetchArticle = () => {
@@ -96,6 +98,8 @@ const Article = () => {
   const handleLike = () => {
     const token = sessionStorage.getItem('token');
     const userId = sessionStorage.getItem('userId');
+    console.log(userId);
+   
 
     if (!token) {
       alert('Faça login para curtir um artigo!');

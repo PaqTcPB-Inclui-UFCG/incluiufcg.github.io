@@ -24,8 +24,8 @@ const ENDPOINTS = {
         getUser: (userId) => `${BASE_URL}users/${userId}`,
         uploadPhoto: (userId) => `${BASE_URL}users/${userId}/photo`,
         changePassword: (userId) => `${BASE_URL}users/${userId}/change-password`,
-        // atualizaçoes
         likeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/like`,
+        dislikeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/dislike`,
         getUserList: BASE_URL + 'users',
     },
     auth: {
