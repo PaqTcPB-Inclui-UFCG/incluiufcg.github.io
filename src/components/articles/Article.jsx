@@ -95,31 +95,27 @@ const Article = () => {
   // curte o artigo
   const handleLike = () => {
     const token = sessionStorage.getItem('token');
+    const userId = sessionStorage.getItem('userId');
 
-    if (!token){
-     alert('Faça login para curtir um artigo!');
+    if (!token) {
+      alert('Faça login para curtir um artigo!');
       return;
     }
 
-    axios.put(ENDPOINTS.articles.likeArticle(articleId),
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          }
-        }
-      )
-      
-      .then(response => {
-        setLiked(response.data); 
-      })
-      .catch(error => {
-        console.error('Erro:', error);
-       
-      });
+    axios.put(ENDPOINTS.users.likeArticle(articleId, userId), {}, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    .then(response => {
+      setLiked(response.data);
+      console.log('Artigo curtido com sucesso.');
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+    });
     
   };
-  
-  
   
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);

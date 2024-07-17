@@ -11,8 +11,7 @@ const ENDPOINTS = {
         updateArticle: (articleId) => `${BASE_URL}api/articles/${articleId}`,
         deleteArticle: (articleId) => `${BASE_URL}api/articles/${articleId}`,
         searchArticles: (searchTerm, searchType) => `${BASE_URL}api/articles/search?keyword=${searchTerm}&searchType=${searchType}`,
-        // atualizaçoes
-        likeArticle: (articleId) => `${BASE_URL}api/articles/${articleId}/like`
+        
 
     },
     attachments: {
@@ -25,6 +24,8 @@ const ENDPOINTS = {
         getUser: (userId) => `${BASE_URL}users/${userId}`,
         uploadPhoto: (userId) => `${BASE_URL}users/${userId}/photo`,
         changePassword: (userId) => `${BASE_URL}users/${userId}/change-password`,
+        // atualizaçoes
+        likeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/like`,
         getUserList: BASE_URL + 'users',
     },
     auth: {
