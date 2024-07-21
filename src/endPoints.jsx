@@ -24,9 +24,12 @@ const ENDPOINTS = {
         getUser: (userId) => `${BASE_URL}users/${userId}`,
         uploadPhoto: (userId) => `${BASE_URL}users/${userId}/photo`,
         changePassword: (userId) => `${BASE_URL}users/${userId}/change-password`,
-        // atualizaçoes
         likeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/like`,
+<<<<<<< HEAD
         favorites: (userId) => `${BASE_URL}users/${userId}/favoritesListOfUser`,
+=======
+        dislikeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/dislike`,
+>>>>>>> 1f8a6ce9ab50c6452502ca536d725917f456bb21
         getUserList: BASE_URL + 'users',
     },
     auth: {
