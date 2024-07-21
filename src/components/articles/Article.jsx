@@ -49,6 +49,8 @@ const Article = () => {
           setArticleData(response.data);
           setCountLike(response.data.Favorite);
           fetchAttachments();
+          checkFavorite();
+
         })
         .catch(error => {
           console.error('Erro ao buscar o artigo:', error);
@@ -62,6 +64,27 @@ const Article = () => {
     }
 
   }, []);
+
+  const checkFavorite = async () => {
+    const token = sessionStorage.getItem('token');
+    const userId = sessionStorage.getItem('userId');
+  
+    if (!token) return;
+  
+    const response = await axios.get(ENDPOINTS.users.favorites(userId), {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+
+    const artigos = response.data;
+    const isLiked = artigos.includes(articleId)
+
+    if(isLiked){
+      setLiked(true);
+      console.log('curtido')
+    }
+  };
 
   const fetchAttachments = () => {
     axios.get(ENDPOINTS.articles.getArticleAttachments(articleId), {
@@ -93,13 +116,19 @@ const Article = () => {
   };
 
   // curte o artigo
-  const handleLike = () => {
+  const handleLike = async () => {
     const token = sessionStorage.getItem('token');
     const userId = sessionStorage.getItem('userId');
 
     if (!token) {
       alert('Faça login para curtir um artigo!');
       return;
+    }
+
+    const liked = await checkFavoriteTrue();
+
+    if(liked){
+      return
     }
 
     axios.put(ENDPOINTS.users.likeArticle(articleId, userId), {}, {
@@ -115,6 +144,35 @@ const Article = () => {
       console.error('Erro:', error);
     });
     
+  };
+
+  const checkFavoriteTrue = async () => {
+    const token = sessionStorage.getItem('token');
+    const userId = sessionStorage.getItem('userId');
+  
+    if (!token) return false;
+  
+    try {
+      const response = await axios.get(ENDPOINTS.users.favorites(userId), {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      });
+
+      const artigos = response.data; 
+      const isLiked = artigos.includes(articleId);
+
+      if (isLiked) {
+        console.log('descurtido');
+        setLiked(false);
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      return false;
+    }
   };
   
   const handleSnackbarClose = () => {

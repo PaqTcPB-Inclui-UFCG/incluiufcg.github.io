@@ -26,6 +26,7 @@ const ENDPOINTS = {
         changePassword: (userId) => `${BASE_URL}users/${userId}/change-password`,
         // atualizaçoes
         likeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/like`,
+        favorites: (userId) => `${BASE_URL}users/${userId}/favoritesListOfUser`,
         getUserList: BASE_URL + 'users',
     },
     auth: {
