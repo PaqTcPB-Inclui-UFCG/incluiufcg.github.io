@@ -11,6 +11,7 @@ const ENDPOINTS = {
         updateArticle: (articleId) => `${BASE_URL}api/articles/${articleId}`,
         deleteArticle: (articleId) => `${BASE_URL}api/articles/${articleId}`,
         searchArticles: (searchTerm, searchType) => `${BASE_URL}api/articles/search?keyword=${searchTerm}&searchType=${searchType}`,
+        totalLikes: (articleId) => `${BASE_URL}api/articles/${articleId}/getFavorites`,
         
 
     },
@@ -25,11 +26,8 @@ const ENDPOINTS = {
         uploadPhoto: (userId) => `${BASE_URL}users/${userId}/photo`,
         changePassword: (userId) => `${BASE_URL}users/${userId}/change-password`,
         likeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/like`,
-<<<<<<< HEAD
-        favorites: (userId) => `${BASE_URL}users/${userId}/favoritesListOfUser`,
-=======
         dislikeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/dislike`,
->>>>>>> 1f8a6ce9ab50c6452502ca536d725917f456bb21
+        favorites: (userId) => `${BASE_URL}users/${userId}/favoritesListOfUser`,
         getUserList: BASE_URL + 'users',
     },
     auth: {

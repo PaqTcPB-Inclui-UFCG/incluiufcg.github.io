@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { useParams } from 'react-router-dom';
+
 import { useHotkeys } from 'react-hotkeys-hook';
 import ENDPOINTS from '../../endPoints';
 
@@ -41,8 +42,20 @@ const Article = () => {
 
 
   const articleId = query.articleID.split('=')[1];
- 
   
+  useEffect(() => {
+    const fetchTotalLikes = async () => {
+      try {
+        const response = await axios.get(ENDPOINTS.articles.totalLikes(articleId));
+        setCountLike(response.data); 
+        console.log(response.data)
+      } catch (error) {
+        console.error('Erro:', error);
+      }
+    };
+
+    fetchTotalLikes();
+  }, [articleId]);
 
   useEffect(() => {
     const fetchArticle = () => {
@@ -142,6 +155,7 @@ const Article = () => {
     })
     .then(response => {
       setLiked(response.data);
+      setCountLike(prevCount => prevCount + 1);
       console.log('Artigo curtido com sucesso.');
     })
     .catch(error => {
@@ -167,15 +181,21 @@ const Article = () => {
       const isLiked = artigos.includes(articleId);
 
       if (isLiked) {
-        console.log('descurtido');
+        axios.put(ENDPOINTS.users.dislikeArticle(articleId, userId), {}, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        })
         setLiked(false);
+        setCountLike(prevCount => prevCount - 1);
         return true;
+
       } else {
         return false;
       }
     } catch (error) {
       console.error('Erro:', error);
-      return false;
+
     }
   };
   
@@ -260,8 +280,12 @@ const Article = () => {
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <IconButton onClick={handleLike} sx={{ color: highContrast ? "#ffffff" : "inherit" }}>
-                    {liked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}{countLike}
+                    {liked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}
                   </IconButton>
+                  <Typography variant="body1" paragraph sx={{ color: highContrast ? "#fff" : "inherit" }}>
+                    <strong>..{countLike}..</strong>
+                  </Typography>
+                  
                 </Grid>
                 <Grid item>
                   <IconButton onClick={handleSave} sx={{ color: highContrast ? "#ffffff" : "inherit" }}>
