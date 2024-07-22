@@ -155,7 +155,6 @@ const Article = () => {
     })
     .then(response => {
       setLiked(response.data);
-      setCountLike(prevCount => prevCount + 1);
       console.log('Artigo curtido com sucesso.');
     })
     .catch(error => {
@@ -187,7 +186,6 @@ const Article = () => {
           }
         })
         setLiked(false);
-        setCountLike(prevCount => prevCount - 1);
         return true;
 
       } else {
