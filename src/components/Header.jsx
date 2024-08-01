@@ -180,7 +180,6 @@ export default function Header({ highContrast, setHighContrast }) {
         fontSize: '2.7vw',
         display: 'flex',
         alignItems: 'center',
-        marginRight: '5.8vw',
         color: '#000000',
         mixBlendMode: 'normal',
         flex: 'none',
@@ -241,8 +240,67 @@ export default function Header({ highContrast, setHighContrast }) {
                         </IconButton>
                     ) : (
                         <React.Fragment>
-                            <Button sx={buttonStyle} component={Link} to="/sobre">Sobre</Button>
-                            <Button sx={buttonStyle} component={Link} to="/analise-de-dados">Perspectivas PCD: Análise de Dados</Button>
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                                <Button sx={buttonStyle} component={Link} to="/sobre">Sobre</Button>
+                                <Button sx={buttonStyle} component={Link} to="/analise-de-dados">Perspectivas PCD: Análise de Dados</Button>
+                                <Box sx={{ flexGrow: 0 }}>
+                                    <Tooltip title="">
+                                        {isAdmin && !isMobile && (
+                                            <Button sx={buttonStyle} onClick={handleOpenAdminMenu}>Administração</Button>
+                                        )}            </Tooltip>
+                                    <Menu
+                                        sx={{ mt: '45px' }}
+                                        id="menu-appbar"
+                                        anchorEl={anchorElAdmin}
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        keepMounted
+                                        transformOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        open={Boolean(anchorElAdmin)}
+                                        onClose={handleCloseAdminMenu}
+                                    >
+                                        {settings.map((setting) => (
+                                            <MenuItem key={setting} onClick={() => handleSettingClick(setting)}>
+                                                <Typography textAlign="center">{setting}</Typography>
+                                            </MenuItem>
+                                        ))}
+                                    </Menu>
+                                </Box>
+                                <Button sx={buttonStyle} component={Link} to="/mapa-da-ufcg">Mapa da UFCG</Button>
+                                <Box sx={{ flexGrow: 0 }}>
+                                    <Tooltip title="">
+                                        {isAdmin && !isMobile && (
+                                            <Button sx={buttonStyle} onClick={handleOpenAdminMenu}>Administração</Button>
+                                        )}            </Tooltip>
+                                    <Menu
+                                        sx={{ mt: '45px' }}
+                                        id="menu-appbar"
+                                        anchorEl={anchorElAdmin}
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        keepMounted
+                                        transformOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        open={Boolean(anchorElAdmin)}
+                                        onClose={handleCloseAdminMenu}
+                                    >
+                                        {settings.map((setting) => (
+                                            <MenuItem key={setting} onClick={() => handleSettingClick(setting)}>
+                                                <Typography textAlign="center">{setting}</Typography>
+                                            </MenuItem>
+                                        ))}
+                                    </Menu>
+                                </Box>
+                            </Box>
                             <Box sx={{ flexGrow: 0 }}>
                                 <Tooltip title="">
                                     {isAdmin && !isMobile && (
@@ -271,20 +329,6 @@ export default function Header({ highContrast, setHighContrast }) {
                                     ))}
                                 </Menu>
                             </Box>
-                            <IconButton onClick={handleSearch} sx={searchButtonStyle}>
-                                <SearchIcon />
-                            </IconButton>
-                            {showSearchField && (
-                                <TextField
-                                    inputRef={searchRef}
-                                    type="search"
-                                    variant="outlined"
-                                    placeholder="Pesquisar..."
-                                    size="small"
-                                    onChange={handleSearchChange}
-
-                                />
-                            )}
                             <div style={{ marginLeft: 'auto' }}>
                                 {!isLoggedIn && (
                                     <React.Fragment>
@@ -369,7 +413,7 @@ export default function Header({ highContrast, setHighContrast }) {
                     </Drawer>
                 )}
                 <Box borderTop={1} borderColor="divider" sx={{ borderColor: highContrast ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.2)' }}></Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width:'100%', padding: '0 4rem' }}>
                     <Box borderTop={1} borderColor="divider" sx={{ borderColor: highContrast ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.2)' }}></Box>
                     <Box sx={{ p: 1, textAlign: 'center', display: 'flex', alignItems: 'center' }}>
                         <Typography variant="body1" sx={{ ...buttonStyle }} onClick={toggleHighContrast} style={{ cursor: 'pointer', marginRight: '10px' }}>

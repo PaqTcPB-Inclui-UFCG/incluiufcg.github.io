@@ -13,7 +13,6 @@ const ENDPOINTS = {
         searchArticles: (searchTerm, searchType) => `${BASE_URL}api/articles/search?keyword=${searchTerm}&searchType=${searchType}`,
         totalLikes: (articleId) => `${BASE_URL}api/articles/${articleId}/getFavorites`,
         
-
     },
     attachments: {
         uploadAttachment: (articleId) => `${BASE_URL}api/attachments?articleId=${articleId}`,

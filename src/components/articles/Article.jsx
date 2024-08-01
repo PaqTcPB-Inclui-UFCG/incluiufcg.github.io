@@ -42,20 +42,7 @@ const Article = () => {
 
 
   const articleId = query.articleID.split('=')[1];
-  
-  useEffect(() => {
-    const fetchTotalLikes = async () => {
-      try {
-        const response = await axios.get(ENDPOINTS.articles.totalLikes(articleId));
-        setCountLike(response.data); 
-        console.log(response.data)
-      } catch (error) {
-        console.error('Erro:', error);
-      }
-    };
 
-    fetchTotalLikes();
-  }, [articleId]);
 
   useEffect(() => {
     const fetchArticle = () => {
@@ -80,6 +67,24 @@ const Article = () => {
 
   }, []);
 
+  useEffect(() => {
+    const fetchTotalLikes = async () => {
+      try {
+        const response = await axios.get(ENDPOINTS.articles.totalLikes(articleId));
+        setCountLike(response.data); 
+      
+      } catch (error) {
+        console.error('Erro:', error);
+      }
+    };
+
+    const intervalId = setInterval(fetchTotalLikes, 5000);
+
+    fetchTotalLikes();
+
+    return () => clearInterval(intervalId);
+  }, [articleId]);
+
   const checkFavorite = async () => {
     const token = sessionStorage.getItem('token');
     const userId = sessionStorage.getItem('userId');
@@ -97,6 +102,7 @@ const Article = () => {
 
     if(isLiked){
       setLiked(true);
+      console.log(countLike)
       console.log('curtido')
     }
   };
@@ -106,6 +112,7 @@ const Article = () => {
     })
       .then(response => {
         setAttachments(response.data);
+        
       })
       .catch(error => {
         console.error('Erro ao buscar os anexos do artigo:', error);
@@ -154,7 +161,8 @@ const Article = () => {
       }
     })
     .then(response => {
-      setLiked(response.data);
+      setLiked(true);
+      console.log(countLike)
       console.log('Artigo curtido com sucesso.');
     })
     .catch(error => {
@@ -185,6 +193,8 @@ const Article = () => {
             Authorization: `Bearer ${token}`,
           }
         })
+        console.log(countLike)
+        console.log('descurtido')
         setLiked(false);
         return true;
 
@@ -275,15 +285,16 @@ const Article = () => {
                 <strong>Tags: </strong> {articleData.tags.join(', ')}
               </Typography>
               <Divider variant="middle" style={{ margin: '1rem 0', backgroundColor: highContrast ? "#fff" : "inherit" }} />
-              <Grid container spacing={2} justifyContent="center">
+              <Grid container spacing={2} justifyContent="center" style={{ margin: '1rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Grid item>
-                  <IconButton onClick={handleLike} sx={{ color: highContrast ? "#ffffff" : "inherit" }}>
-                    {liked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}
-                  </IconButton>
-                  <Typography variant="body1" paragraph sx={{ color: highContrast ? "#fff" : "inherit" }}>
-                    <strong>..{countLike}..</strong>
-                  </Typography>
-                  
+                  <Grid style={{ margin: '1rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <IconButton onClick={handleLike} sx={{ color: highContrast ? "#ffffff" : "inherit" }}>
+                      {liked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}
+                    </IconButton>
+                    <Typography variant="body1" paragraph sx={{ color: highContrast ? "#fff" : "inherit" }} style={{ margin: '1rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <strong>{countLike}</strong>
+                    </Typography>
+                  </Grid>
                 </Grid>
                 <Grid item>
                   <IconButton onClick={handleSave} sx={{ color: highContrast ? "#ffffff" : "inherit" }}>
@@ -302,6 +313,7 @@ const Article = () => {
                   />
                 </Grid>
               </Grid>
+
             </Paper>
           )}
         </div>
