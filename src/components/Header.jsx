@@ -272,63 +272,9 @@ export default function Header({ highContrast, setHighContrast }) {
                                     </Menu>
                                 </Box>
                                 <Button sx={buttonStyle} component={Link} to="/mapa-da-ufcg">Mapa da UFCG</Button>
-                                <Box sx={{ flexGrow: 0 }}>
-                                    <Tooltip title="">
-                                        {isAdmin && !isMobile && (
-                                            <Button sx={buttonStyle} onClick={handleOpenAdminMenu}>Administração</Button>
-                                        )}            </Tooltip>
-                                    <Menu
-                                        sx={{ mt: '45px' }}
-                                        id="menu-appbar"
-                                        anchorEl={anchorElAdmin}
-                                        anchorOrigin={{
-                                            vertical: 'top',
-                                            horizontal: 'right',
-                                        }}
-                                        keepMounted
-                                        transformOrigin={{
-                                            vertical: 'top',
-                                            horizontal: 'right',
-                                        }}
-                                        open={Boolean(anchorElAdmin)}
-                                        onClose={handleCloseAdminMenu}
-                                    >
-                                        {settings.map((setting) => (
-                                            <MenuItem key={setting} onClick={() => handleSettingClick(setting)}>
-                                                <Typography textAlign="center">{setting}</Typography>
-                                            </MenuItem>
-                                        ))}
-                                    </Menu>
-                                </Box>
+                               
                             </Box>
-                            <Box sx={{ flexGrow: 0 }}>
-                                <Tooltip title="">
-                                    {isAdmin && !isMobile && (
-                                        <Button sx={buttonStyle} onClick={handleOpenAdminMenu}>Administração</Button>
-                                    )}            </Tooltip>
-                                <Menu
-                                    sx={{ mt: '45px' }}
-                                    id="menu-appbar"
-                                    anchorEl={anchorElAdmin}
-                                    anchorOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'right',
-                                    }}
-                                    keepMounted
-                                    transformOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'right',
-                                    }}
-                                    open={Boolean(anchorElAdmin)}
-                                    onClose={handleCloseAdminMenu}
-                                >
-                                    {settings.map((setting) => (
-                                        <MenuItem key={setting} onClick={() => handleSettingClick(setting)}>
-                                            <Typography textAlign="center">{setting}</Typography>
-                                        </MenuItem>
-                                    ))}
-                                </Menu>
-                            </Box>
+                            
                             <div style={{ marginLeft: 'auto' }}>
                                 {!isLoggedIn && (
                                     <React.Fragment>
