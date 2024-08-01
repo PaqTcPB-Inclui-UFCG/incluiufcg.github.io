@@ -278,8 +278,11 @@ export default function Header({ highContrast, setHighContrast }) {
                             <div style={{ marginLeft: 'auto' }}>
                                 {!isLoggedIn && (
                                     <React.Fragment>
-                                        <Button sx={buttonStyle} component={Link} to="/entrar">Login</Button>
-                                        <Button variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
+                                        <Box style={{ margin: '1rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                            <Button sx={buttonStyle} component={Link} to="/entrar">Login</Button>
+                                            <Button variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
+                                        </Box>
+                                        
                                     </React.Fragment>
                                 )}
                             </div>
