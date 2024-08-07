@@ -13,7 +13,6 @@ function Footer({ highContrast }) {
       <Typography variant="body1" color="textSecondary" style={{ color: highContrast ? '#FFFF00' : '#bdbdbd' }}>
         &copy; 2024 - IncluiUFCG - UFCG. Todos os direitos reservados.
       </Typography>
-      <VLibras forceOnload={true}/>
     </Box>
   );
 }

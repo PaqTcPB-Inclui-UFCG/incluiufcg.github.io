@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerText: {
     position: 'absolute',
+    zIndex:100,
     top: '30%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   description: {
     position: 'absolute',
+    zIndex:100,
     top: 'calc(30% + 5vw)',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -91,13 +93,23 @@ const ImageContainer = ({ highContrast }) => {
           id="fullWidth"
           label="Pesquisar..." 
           variant="filled" 
-          InputProps={{ disableUnderline: true }}
+          InputProps={{
+            disableUnderline: true,
+            endAdornment: (
+              <IconButton 
+                aria-label="search" 
+                style={{ color: '#808080' }} 
+                component={Link} 
+                to={`/busca/searchTerm=${searchTerm}`}
+                disableRipple
+              >
+                <SearchIcon />
+              </IconButton>
+            ),
+          }}
           className={classes.searchInput}
           onChange={handleSearchChange}
         />
-        <IconButton type="submit" aria-label="search" style={{ color: '#ffffff' }} component={Link} to={`/busca/searchTerm=${searchTerm}`}>
-          <SearchIcon />
-        </IconButton>
       </div>
     </div>
   );

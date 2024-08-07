@@ -34,7 +34,7 @@ const About = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Header highContrast={highContrast} setHighContrast={setHighContrast} />
-            <VLibras forceOnload={true} />
+        
             <div ref={bodyRef} style={{ backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh' }}>
                 <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '' }}>
                     <img
