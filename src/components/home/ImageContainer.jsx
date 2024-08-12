@@ -11,7 +11,16 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   image: {
-    width: '100%'
+    width: '100%',
+    
+  },
+  background: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 133, 187, 0.05)',
   },
   headerText: {
     position: 'absolute',
@@ -28,13 +37,14 @@ const useStyles = makeStyles((theme) => ({
   description: {
     position: 'absolute',
     zIndex:100,
-    top: 'calc(30% + 5vw)',
+    top: 'calc(30% + 3vw)',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
     color: '#fff',
-    fontSize: '1.3vw',
+    fontSize: '2vw',
     fontWeight: 'normal',
+    width: '70vw'
   },
   searchContainer: {
     position: 'absolute',
@@ -54,7 +64,8 @@ const useStyles = makeStyles((theme) => ({
   searchInput: {
     width: '80%',
     borderRadius: '2.5vw',
-    background: 'white',    
+    background: '#FFFFFF',   
+    zIndez:1 
   },
   '@media (max-width: 600px)': {
     searchContainer: {
@@ -78,12 +89,13 @@ const ImageContainer = ({ highContrast }) => {
       <img 
         src="./adptare.png" 
         className={classes.image} 
-        style={{ filter: highContrast ? 'brightness(10%)' : 'brightness(50%)' }} 
-        alt="Background"
+        style={{
+          filter: `blur(0px) ${highContrast ? 'brightness(10%)' : 'brightness(50%)'}`
+        }}
       />
-      <div className={classes.headerText}>
-      IncluiUFCG
-      </div>
+      <div className={classes.background} style={{
+          filter: `blur(2px)`
+        }}></div>
       <div className={classes.description}>
         Explore nosso acervo digital, repleto de documentos e análises de dados voltados para promover uma educação inclusiva.
       </div>

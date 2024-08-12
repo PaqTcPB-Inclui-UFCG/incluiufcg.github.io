@@ -38,7 +38,7 @@ const highContrastTheme = createTheme({
       secondary: '#ffffff', 
     },
     yellow: {
-      main: '#FFFF00', 
+      main: '#050834', 
     },
   },
 });
@@ -74,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
   },
   filterContainer:{
     marginLeft: '5vw', 
+    marginTop:'2vw'
   },
   select: {
     '& .MuiSelect-select': {
@@ -97,16 +98,31 @@ const useStyles = makeStyles((theme) => ({
   highContrastRoot: {
     backgroundColor: '#000000', 
   },
+  divStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems:'center',
+    width: '100%'
+  },
+
   linkStyle: {
-    color: '#bdbdbd',
+    color: 'black',
     fontSize: '1.3rem',
     display: 'flex',
     justifyContent: 'center',
+    alignItems:'center',
     textDecoration: 'none', 
+    marginBottom: '2rem',
+    borderRadius:'1rem',
+    width: '15rem',
+    border: '1px solid #ccc',
+    textAlign:'center',
     '&:hover': {
       color: '#757575', 
     },
+
   },
+
 }));
   
 const Home = () => {
@@ -205,7 +221,9 @@ const Home = () => {
             {renderArticles(sortedArticles)}
           </Grid>
         </div>
-        <Link to="/base-de-conhecimento" className={classes.linkStyle} style={{ color: highContrast ?'#FFFF00' : '#bdbdbd'}}>Ver mais...</Link>
+        <div className={classes.divStyle}>
+        <Link  to="/base-de-conhecimento" className={classes.linkStyle} style={{ color: highContrast ?'#FFFF00' : '#bdbdbd'}}><div>Carregar mais</div></Link>
+        </div>
         <Footer highContrast={highContrast}/>
       </div>
     </ThemeProvider>

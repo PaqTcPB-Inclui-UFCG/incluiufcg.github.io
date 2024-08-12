@@ -280,7 +280,7 @@ export default function Header({ highContrast, setHighContrast }) {
                                     <React.Fragment>
                                         <Box style={{ margin: '1rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                             <Button sx={buttonStyle} component={Link} to="/entrar">Login</Button>
-                                            <Button variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
+                                            <Button style={{background: '#4183ba'}} variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
                                         </Box>
                                         
                                     </React.Fragment>

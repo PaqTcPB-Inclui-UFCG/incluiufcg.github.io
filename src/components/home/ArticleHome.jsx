@@ -55,7 +55,7 @@ const ArticleHome = ({ highContrast,title, imageUrl, sysId }) => {
             <img src={`data:image/jpeg;base64,${imageUrl}`} alt={title} className={classes.articleImage}/>
           ) : null}
         </div>
-        <div className={classes.articleTitleContainer}  style ={{backgroundColor: highContrast ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0.5)'}}>
+        <div className={classes.articleTitleContainer}  style ={{backgroundColor: highContrast ? 'rgba(0, 0, 0, 0.7)' : 'rgba(68,97,126,0.8)'}}>
           <div className={classes.articleTitle} style ={{backgroundColor: highContrast ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.0)', color:  highContrast ? '#FFFF00':'#fff'}}>{title}</div>
         </div>
       </div>
