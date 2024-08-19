@@ -3,6 +3,7 @@ import { Typography, Paper, ThemeProvider, CssBaseline, createTheme } from '@mui
 import Header from '../Header';
 import Footer from '../Footer';
 import { useHotkeys } from 'react-hotkeys-hook';
+import { ClassNames } from '@emotion/react';
 
 const theme = createTheme({
   typography: {
@@ -36,62 +37,153 @@ const About = () => {
     }
   }, [setHighContrast]);
 
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
-      <div ref={bodyRef} style={{  backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh' }}>
-        <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px',  backgroundColor: highContrast ? "#000000" : '' }}>
+      <div style={{position:'relative', width:'100%'}}>
+        
           <img
-            src="/about-image.jpg"
-            alt="Sobre a Iniciativa"
-            title="Pessoa lendo um livro"
+                src="/about-image.jpg"
+                alt="Sobre a Iniciativa"
+                title="Pessoa lendo um livro"
+                style={{
+                  width: '100%', 
+                  height: '18vw', 
+                  objectFit: 'cover', 
+                }}
+            />
+
+        <div 
             style={{
-              width: '100%', 
-              height: '24vw', 
-              objectFit: 'cover', 
-              marginBottom: '1rem',
-              borderRadius: '10px'
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(92, 105, 114, 0.35)',  
             }}
           />
-          <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit'}}>
-            Sobre a Iniciativa
+
+          <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white'}}>
+              Sobre a Iniciativa
           </Typography>
+      </div>
+      
+      <div className = 'body' ref={bodyRef} style={{  backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh', padding: '3rem' }}>
           <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF00" : 'inherit' }}>
-            O QUE É ENSINO INCLUSIVO?
+            <strong style={{color: 'rgba(92, 105, 114, 0.9)'}}>O QUE É ENSINO INCLUSIVO?</strong>
           </Typography>
           <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
             A Educação Inclusiva é uma abordagem contemporânea que busca garantir o direito de todos à educação, promovendo a igualdade de oportunidades e valorizando as diversidades humanas. Seus princípios fundamentais são:
             </Typography >
-          <ul style={{color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
-            <li >
-              <Typography variant="body1" paragraph>
-              <strong>Reito de Acesso à Educação:</strong> Todos têm o direito de acesso à educação de qualidade na escola regular, com atendimento especializado conforme suas especificidades, alinhado com princípios internacionais de direitos humanos.
-              </Typography>
+          <ul style={{color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal", display: 'grid',gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'repeat(2, auto)', gap: '10px', alignItems:'center', justifyContent:'center', marginRight: '3.5rem'}}>
+      
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem', marginBottom:'10px'}}>
+            <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
+              <img 
+                src='./book.png'
+                alt="livro"
+                title="ícone de livro"
+                style={{
+                  width: '5vw', 
+                  height: '5vw', 
+                  objectFit: 'cover', 
+                }}
+              />
+              <Typography variant="body1" paragraph style={{ margin: 0 }} ><strong style={{ color: '#4183ba' }}>Reito de Acesso à Educação</strong></Typography>
+              </div>
+              <div style={{display:'flex', alignItems:'center', justifyContent:'center', textAlign: 'center' }}>
+                <Typography variant="body1" paragraph style={{ margin: 0, textAlign: 'justify' }} >
+                  Todos têm o direito de acesso à educação de qualidade na escola regular, com atendimento especializado conforme suas especificidades, alinhado com princípios internacionais de direitos humanos.
+                </Typography>
+              </div>
             </li>
-            <li>
-              <Typography variant="body1" paragraph>
-              <strong>Potencial de Aprendizagem de Todos:</strong> Considera que todas as pessoas, independentemente de suas características intelectuais, sensoriais e físicas, têm potencial para aprender e ensinar, destacando a importância de estratégias pedagógicas que promovam vínculos afetivos e aquisição de conhecimento.
-              </Typography>
+
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem', marginBottom:'10px'}}>
+            <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
+              <img 
+                src='./Training.png'
+                alt="Potencial de aprendizado para todos"
+                style={{
+                  width: '5vw', 
+                  height: '5vw', 
+                  objectFit: 'cover', 
+                }}
+              />
+              <Typography variant="body1" paragraph style={{ margin: 0 }} ><strong style={{ color: '#4183ba' }}>Potencial de Aprendizagem de Todos</strong></Typography>
+              </div>
+              <div style={{display:'flex', alignItems:'center', justifyContent:'center', textAlign: 'center' }}>
+                <Typography variant="body1" paragraph style={{ margin: 0, textAlign: 'justify' }} >
+                Considera que todas as pessoas, independentemente de suas características intelectuais, sensoriais e físicas, têm potencial para aprender e ensinar, destacando a importância de estratégias pedagógicas que promovam vínculos afetivos e aquisição de conhecimento.
+                </Typography>
+              </div>
             </li>
-            <li>
-              <Typography variant="body1" paragraph>
-              <strong>Processo de Aprendizagem Singular:</strong> Reconhece que o processo de aprendizagem é único para cada indivíduo, enfatizando a necessidade de práticas educacionais flexíveis que atendam às necessidades específicas de cada estudante.
-              </Typography>
+
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem', marginBottom:'10px'}}>
+            <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
+              <img 
+                src='./student.png'
+                alt="Processo de aprendizado singular"
+                style={{
+                  width: '5vw', 
+                  height: '5vw', 
+                  objectFit: 'cover', 
+                }}
+              />
+              <Typography variant="body1" paragraph style={{ margin: 0 }} ><strong style={{ color: '#4183ba' }}>Processo de Aprendizagem Singular</strong></Typography>
+              </div>
+              <div style={{display:'flex', alignItems:'center', justifyContent:'center', textAlign: 'center' }}>
+                <Typography variant="body1" paragraph style={{ margin: 0, textAlign: 'justify' }} >
+                Reconhece que o processo de aprendizagem é único para cada indivíduo, enfatizando a necessidade de práticas educacionais flexíveis que atendam às necessidades específicas de cada estudante.
+                </Typography>
+              </div>
             </li>
-            <li>
-              <Typography variant="body1" paragraph>
-              <strong>Benefícios do Convívio no Ambiente Escolar: </strong> Destaca que a interação entre pessoas diversas é crucial para o desenvolvimento pleno, ampliando a percepção sobre pluralidade, estimulando a empatia e favorecendo competências intelectuais.
-              </Typography>
+
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem'}}>
+            <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
+              <img 
+                src='./Diploma.png'
+                alt="Processo de aprendizado singular"
+                style={{
+                  width: '5vw', 
+                  height: '5vw', 
+                  objectFit: 'cover', 
+                }}
+              />
+              <Typography variant="body1" paragraph style={{ margin: 0 }} ><strong style={{ color: '#4183ba' }}>Benefícios do Convívio no Ambiente Escolar</strong></Typography>
+              </div>
+              <div style={{display:'flex', alignItems:'center', justifyContent:'center', textAlign: 'center' }}>
+                <Typography variant="body1" paragraph style={{ margin: 0, textAlign: 'justify' }} >
+                Destaca que a interação entre pessoas diversas é crucial para o desenvolvimento pleno, ampliando a percepção sobre pluralidade, estimulando a empatia e favorecendo competências intelectuais.
+                </Typography>
+              </div>
             </li>
-            <li>
-              <Typography variant="body1" paragraph>
-              <strong>Inclusão de Todos na Diversidade: </strong> Enfatiza que a educação inclusiva não se limita apenas às pessoas tradicionalmente excluídas, como aquelas com deficiência, mas abrange todos os estudantes, educadores, famílias e demais membros da comunidade escolar.
-              </Typography>
+            
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem'}}>
+            <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
+              <img 
+                src='./web.png'
+                alt="Processo de aprendizado singular"
+                style={{
+                  width: '5vw', 
+                  height: '5vw', 
+                  objectFit: 'cover', 
+                }}
+              />
+              <Typography variant="body1" paragraph style={{ margin: 0 }} ><strong style={{ color: '#4183ba' }}>Inclusão de Todos na Diversidade</strong></Typography>
+              </div>
+              <div style={{display:'flex', alignItems:'center', justifyContent:'center', textAlign: 'center' }}>
+                <Typography variant="body1" paragraph style={{ margin: 0, textAlign: 'justify' }} >
+                Enfatiza que a educação inclusiva não se limita apenas às pessoas tradicionalmente excluídas, como aquelas com deficiência, mas abrange todos os estudantes, educadores, famílias e demais membros da comunidade escolar.
+                </Typography>
+              </div>
             </li>
+
           </ul>
           <Typography variant="h5" style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal"  }} gutterBottom>
-             INCLUSÃO NA UFCG
+            <strong style={{color: 'rgba(92, 105, 114, 0.9)'}}>INCLUSÃO NA UFCG</strong>
           </Typography>
           <Typography variant="body1" paragraph sx={{color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}> 
           A Universidade Federal de Campina Grande (UFCG) destaca-se por ter um dos maiores percentuais de inclusão de pessoas com deficiência (PcD) nos cursos de engenharia no Brasil, conforme revelado por um ranking da plataforma Responde Aí. O levantamento, baseado no Censo da Educação Superior entre 2016 e 2019, posiciona a UFCG em 15º lugar nacional e 5º no Nordeste, com um percentual de inclusão três vezes maior que a média nacional. Dos 3.835 estudantes de engenharia na UFCG, 57 são PcD, representando 1,5%.
@@ -102,7 +194,7 @@ const About = () => {
           <Typography variant="body1" paragraph sx={{color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}> 
             A Resolução nº 11/2016 cria o Núcleo de Acessibilidade e Inclusão (NAI) na Universidade Federal de Campina Grande (UFCG), vinculado à Reitoria, com o propósito de atender pessoas com deficiência física, sensorial, mental ou intelectual, transtornos globais do desenvolvimento e altas habilidades. O NAI está localizado na sede da UFCG em Campina Grande, mas também possui Setores de Apoio Local nos demais Campi. A finalidade principal é oferecer atendimento prioritário a estudantes, podendo ser estendido a servidores docentes e técnico-administrativos. A equipe técnica inclui profissionais de diversas áreas, como psicologia, assistência social, e libras, para garantir suporte abrangente.
           </Typography>
-        </Paper>
+        
       </div>
       <Footer highContrast={highContrast}/>
     </ThemeProvider>
