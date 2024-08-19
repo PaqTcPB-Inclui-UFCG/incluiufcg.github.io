@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 133, 187, 0.05)',
+    backgroundColor: 'rgba(92, 105, 114, 0.35)',
   },
   headerText: {
     position: 'absolute',
@@ -86,13 +86,17 @@ const ImageContainer = ({ highContrast }) => {
 
   return (
     <div className={classes.root}>
-      <img 
-        src="./adptare.png" 
-        className={classes.image} 
-        style={{
-          filter: `blur(0px) ${highContrast ? 'brightness(10%)' : 'brightness(50%)'}`
-        }}
-      />
+      <div className={classes.ContainerImage}
+        style={{width:'100%', height:'40rem', overflow:'hidden'}}
+      >
+        <img 
+          src="./adptare.png" 
+          className={classes.image} 
+          style={{
+            width: '100%', height: '100%', objectFit: 'cover', filter: `blur(0px) ${highContrast ? 'brightness(10%)' : 'brightness(50%)'}`
+          }}
+        />
+      </div>
       <div className={classes.background} style={{
           filter: `blur(2px)`
         }}></div>
