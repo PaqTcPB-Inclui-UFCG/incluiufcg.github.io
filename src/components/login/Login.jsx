@@ -20,7 +20,6 @@ const theme = createTheme({
 
 const useStyles = makeStyles(() => ({
   paper: {
-    padding: '2rem',
     maxWidth: 400,
     margin: 'auto',
     marginTop: '2rem',
