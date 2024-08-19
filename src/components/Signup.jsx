@@ -224,9 +224,11 @@ const Signup = () => {
       <CssBaseline />
       <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
       <div ref={bodyRef} style={{backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh'}}>
-      <Container maxWidth="md" style={{ padding: '2rem', marginBottom: '2rem' }}>
-        <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '' }}>
-          <Typography variant="h4" align="center" gutterBottom>
+      <Container maxWidth="md" style={{ padding: '2rem', marginBottom: '2rem', display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <Paper elevation={3} style={{borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '', width: '40rem',}}>
+          <div style={{borderRadius: '10px  10px 0 0 ', width:'100%', height:'5rem', background:'#4183ba', margin:0}}></div>
+          <div style={{padding:'2rem'}}>
+          <Typography variant="h3" align="center" gutterBottom>
             Cadastro</Typography>
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width:"100%" }}>
             <TextField
@@ -237,15 +239,17 @@ const Signup = () => {
               value={formData.firstName}
               onChange={handleChange}
               required
-              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : ''  }}
+              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '' , width: '90%'}}
             InputLabelProps={{
               sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
             }}
             sx={{
               '& fieldset': {
-                borderColor: highContrast ? "#FFFF00" : '',
-                borderWidth: '0.2rem' 
-  
+                borderRadius:0,
+                borderTop: 'none', 
+                borderRight: 'none', 
+                borderLeft: 'none', 
+                borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
               },
               width: '60%',
               marginTop: "1rem"
@@ -259,14 +263,17 @@ const Signup = () => {
               value={formData.lastName}
               onChange={handleChange}
               required
-              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : ''  }}
+              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '', width: '90%'}}
             InputLabelProps={{
               sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
             }}
             sx={{
               '& fieldset': {
-                borderColor: highContrast ? "#FFFF00" : '',
-                borderWidth: '0.2rem' 
+                borderRadius:0,
+                borderTop: 'none', 
+                borderRight: 'none', 
+                borderLeft: 'none', 
+                borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
   
               },
               width: '60%',
@@ -280,14 +287,17 @@ const Signup = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : ''  }}
+              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '', width: '90%' }}
               InputLabelProps={{
                 sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
               }}
               sx={{
                 '& fieldset': {
-                  borderColor: highContrast ? "#FFFF00" : '',
-                  borderWidth: '0.2rem' 
+                  borderRadius:0,
+                  borderTop: 'none', 
+                  borderRight: 'none', 
+                  borderLeft: 'none', 
+                  borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
     
                 },
                 width: '60%',
@@ -311,14 +321,17 @@ const Signup = () => {
                   </IconButton>
                 ),
               }}
-              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : ''  }}
+              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '' , width: '90%'}}
             InputLabelProps={{
               sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
             }}
             sx={{
               '& fieldset': {
-                borderColor: highContrast ? "#FFFF00" : '',
-                borderWidth: '0.2rem' 
+                borderRadius:0,
+                borderTop: 'none', 
+                borderRight: 'none', 
+                borderLeft: 'none', 
+                borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
   
               },
               width: '60%',
@@ -334,14 +347,17 @@ const Signup = () => {
               helperText={!passwordsMatch && confirmNewPassword.length > 0 && "As senhas estão diferentes"}
               value={formData.confirmPassword}
               required
-              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : ''  }}
+              style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '' , width: '90%'}}
             InputLabelProps={{
               sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
             }}
             sx={{
               '& fieldset': {
-                borderColor: highContrast ? "#FFFF00" : '',
-                borderWidth: '0.2rem' 
+                borderRadius:0,
+                borderTop: 'none', 
+                borderRight: 'none', 
+                borderLeft: 'none', 
+                borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`, 
   
               },
               width: '60%',
@@ -361,7 +377,9 @@ const Signup = () => {
               size="large"
               disabled={loading}
               sx={{
-                backgroundColor: highContrast ? '#FFFF00' : '#1976d2', 
+                borderRadius:'.6rem',
+                marginTop:'1.5rem',
+                backgroundColor: highContrast ? '#FFFF00' : '#4183ba', 
                 color: highContrast ? '#000000' : '#fff', 
                 fontWeight: 'bold' , 
                 '&:hover': {
@@ -373,6 +391,7 @@ const Signup = () => {
               Cadastrar
             </Button>
           </form>
+          </div>
         </Paper>
       </Container>
       </div>
