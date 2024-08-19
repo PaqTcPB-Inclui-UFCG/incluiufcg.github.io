@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useHotkeys } from 'react-hotkeys-hook';
 import ENDPOINTS from '../../endPoints';
 
+
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -123,16 +124,22 @@ const Login = () => {
 
 
   return (
-    <ThemeProvider theme={theme}>
+     <ThemeProvider theme={theme}>
+   
     <CssBaseline />
     <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
       <div ref={bodyRef} style={{backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh'}}>
-      <Container sx={{minHeight: 'calc(100vh - 128px)', backgroundColor: highContrast ? "#000000" : ''}}>
-    <Paper className={classes.paper} elevation={3} sx={{backgroundColor: highContrast ? "#000000" : ''}}>
+      <Container sx={{minHeight: 'calc(100vh - 128px)', backgroundColor: highContrast ? "#000000" : ''}} style={{ padding: '2rem', marginBottom: '2rem', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      
+    <Paper className={classes.paper} elevation={3} style={{borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '', width: '40rem',}}>
+    <div style={{borderRadius: '10px  10px 0 0 ', width:'100%', height:'5rem', background:'#4183ba', margin:0,}}></div>
+    
+    <div style={{padding:'2rem'}}>
+   
       <Typography variant="h4" align="center" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit'}}>
         Login
       </Typography>
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width:"100%" }}>
         <TextField
           label="Email"
           type="email"
@@ -140,16 +147,21 @@ const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          InputLabelProps={{
-            sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+          style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '', width: '90%'}}
+            InputLabelProps={{
+              sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
           }}
           sx={{
             '& fieldset': {
-              borderColor: highContrast ? "#FFFF00" : '',
-              borderWidth: '0.2rem' 
+              borderRadius:0,
+              borderTop: 'none', 
+              borderRight: 'none', 
+              borderLeft: 'none', 
+              borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
 
-            }
-          }}
+            },
+            width: '60%',
+        }}
         />
         <TextField
           label="Senha"
@@ -158,15 +170,21 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          InputLabelProps={{
-            sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+          style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '', width: '90%'}}
+            InputLabelProps={{
+              sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
           }}
           sx={{
             '& fieldset': {
-              borderColor: highContrast ? "#FFFF00" : '',
-              borderWidth: '0.2rem' 
-            }
-          }}
+              borderRadius:0,
+              borderTop: 'none', 
+              borderRight: 'none', 
+              borderLeft: 'none', 
+              borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
+
+            },
+            width: '60%',
+        }}
         />
         <Button
           type="submit"
@@ -176,7 +194,9 @@ const Login = () => {
           className={classes.submitButton}
           disabled={loading}
           sx={{
-            backgroundColor: highContrast ? '#FFFF00' : '#1976d2', 
+            borderRadius:'.6rem',
+            marginTop:'1.5rem',
+            backgroundColor: highContrast ? '#FFFF00' : '#4183ba', 
             color: highContrast ? '#000000' : '#fff', 
             fontWeight: 'bold' , 
             '&:hover': {
@@ -208,10 +228,12 @@ const Login = () => {
           )}
         />
       </Box> */}
+    </div>
     </Paper>    
     </Container>    
     </div>
     <Footer highContrast={highContrast}/>
+    
     </ThemeProvider>
   );
 };
