@@ -135,7 +135,7 @@ const Login = () => {
     
     <div style={{padding:'2rem'}}>
    
-      <Typography variant="h4" align="center" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit'}}>
+      <Typography variant="h4" color='black' align="center" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit'}}>
         Login
       </Typography>
       <form className={classes.form} onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width:"100%" }}>
