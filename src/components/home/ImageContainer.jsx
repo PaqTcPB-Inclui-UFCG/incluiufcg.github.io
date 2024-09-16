@@ -71,6 +71,10 @@ const useStyles = makeStyles((theme) => ({
     searchContainer: {
       display: 'none', 
     },
+
+    description: {
+      fontSize: '3.5vw',
+    },
   },
 }));
 

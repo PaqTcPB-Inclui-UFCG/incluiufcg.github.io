@@ -213,6 +213,7 @@ export default function Header({ highContrast, setHighContrast }) {
             backgroundColor: '#2C3DB1'
         }
     };
+
     useEffect(() => {
         const storedHighContrast = localStorage.getItem('highContrast');
         if (storedHighContrast !== null) {
@@ -365,10 +366,10 @@ export default function Header({ highContrast, setHighContrast }) {
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width:'100%', padding: '0 4rem' }}>
                     <Box borderTop={1} borderColor="divider" sx={{ borderColor: highContrast ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.2)' }}></Box>
                     <Box sx={{ p: 1, textAlign: 'center', display: 'flex', alignItems: 'center' }}>
-                        <Typography variant="body1" sx={{ ...buttonStyle }} onClick={toggleHighContrast} style={{ cursor: 'pointer', marginRight: '10px' }}>
+                        <Typography variant="body1" sx={{ ...buttonStyle, fontSize: {sm:'1rem'}}} onClick={toggleHighContrast} style={{ cursor: 'pointer', marginRight: '10px' }}>
                             Alto Contraste
                         </Typography>
-                        <Typography variant="body1" component={Link} to="/acessibilidade" sx={{ ...buttonStyle }} style={{ cursor: 'pointer' }}>
+                        <Typography variant="body1" component={Link} to="/acessibilidade" sx={{ ...buttonStyle,fontSize: {sm:'1rem'}}} style={{ cursor: 'pointer' }}>
                             Acessibilidade
                         </Typography>
                     </Box>

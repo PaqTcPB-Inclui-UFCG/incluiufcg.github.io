@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect  } from 'react';
-import { Typography, Paper, ThemeProvider, CssBaseline, createTheme } from '@mui/material';
+import { Typography, Paper, ThemeProvider, CssBaseline, createTheme, useMediaQuery } from '@mui/material';
 import Header from '../Header';
 import Footer from '../Footer';
 import { useHotkeys } from 'react-hotkeys-hook';
@@ -28,7 +28,7 @@ const About = () => {
   });
 
   const [highContrast, setHighContrast] = useState();
-
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
     const storedHighContrast = localStorage.getItem('highContrast');
@@ -52,6 +52,7 @@ const About = () => {
                   width: '100%', 
                   height: '18vw', 
                   objectFit: 'cover', 
+                  '@media (max-width: 600px)': { height: '60vw' },
                 }}
             />
 
@@ -63,10 +64,11 @@ const About = () => {
               width: '100%',
               height: '100%',
               backgroundColor: 'rgba(92, 105, 114, 0.35)',  
+             
             }}
           />
 
-          <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white'}}>
+          <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white', fontSize:{ xs: '1.5rem', sm: '2rem', md: '3rem', lg: '3.5rem'}}}>
               Sobre a Iniciativa
           </Typography>
       </div>
@@ -78,9 +80,9 @@ const About = () => {
           <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
             A Educação Inclusiva é uma abordagem contemporânea que busca garantir o direito de todos à educação, promovendo a igualdade de oportunidades e valorizando as diversidades humanas. Seus princípios fundamentais são:
             </Typography >
-          <ul style={{color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal", display: 'grid',gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'repeat(2, auto)', gap: '10px', alignItems:'center', justifyContent:'center', marginRight: '3.5rem'}}>
+          <ul style={{color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal", display: 'grid',gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)' , gridTemplateRows: 'auto', gap: '10px', alignItems:'center', justifyContent:'center', marginRight: '3.5rem'}}>
       
-            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem', marginBottom:'10px'}}>
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: isMobile ? '16rem' : '25rem', height: '18rem', marginBottom:'10px'}}>
             <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
               <img 
                 src='./book.png'
@@ -101,7 +103,7 @@ const About = () => {
               </div>
             </li>
 
-            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem', marginBottom:'10px'}}>
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: isMobile ? '16rem' : '25rem', height:  isMobile ? '22rem' : '18rem', marginBottom:'10px'}}>
             <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
               <img 
                 src='./Training.png'
@@ -121,7 +123,7 @@ const About = () => {
               </div>
             </li>
 
-            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem', marginBottom:'10px'}}>
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: isMobile ? '16rem' : '25rem', height: '18rem', marginBottom:'10px'}}>
             <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
               <img 
                 src='./student.png'
@@ -141,7 +143,7 @@ const About = () => {
               </div>
             </li>
 
-            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem'}}>
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: isMobile ? '16rem' : '25rem', height: '18rem'}}>
             <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
               <img 
                 src='./Diploma.png'
@@ -161,7 +163,7 @@ const About = () => {
               </div>
             </li>
             
-            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: '25rem', height: '18rem'}}>
+            <li style={{background: 'rgba(92, 105, 114, 0.05)',  gap:'15px', listStyleType: 'none', padding:'15px', borderRadius: '10px', width: isMobile ? '16rem' : '25rem', height: '18rem'}}>
             <div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center',}}>
               <img 
                 src='./web.png'
