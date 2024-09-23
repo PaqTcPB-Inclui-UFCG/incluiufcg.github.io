@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {createTheme , Container, ThemeProvider, CssBaseline, Grid, Paper, Typography, TextField, Button, Box, CircularProgress } from '@mui/material';
+import {createTheme , Container, ThemeProvider, CssBaseline, Grid, Paper, Typography, TextField, Button, Box, CircularProgress , useMediaQuery } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import GoogleLogin from '@leecheuk/react-google-login';
 import Header from '../Header';
@@ -120,7 +120,7 @@ const Login = () => {
     }
   }, [setHighContrast]);
 
-
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
      <ThemeProvider theme={theme}>
@@ -131,11 +131,11 @@ const Login = () => {
       <Container sx={{minHeight: 'calc(100vh - 128px)', backgroundColor: highContrast ? "#000000" : ''}} style={{ padding: '2rem', marginBottom: '2rem', display:'flex', alignItems:'center', justifyContent:'center'}}>
       
     <Paper className={classes.paper} elevation={3} style={{borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '', width: '40rem',}}>
-    <div style={{borderRadius: '10px  10px 0 0 ', width:'100%', height:'5rem', background:'#4183ba', margin:0,}}></div>
+    <div style={{borderRadius: '10px  10px 0 0 ', width:'100%', height: isMobile? '4.5rem': '5rem', background:'#4183ba', margin:0,}}></div>
     
     <div style={{padding:'2rem'}}>
    
-      <Typography variant="h4" color='black' align="center" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit'}}>
+      <Typography variant="h4" color='black' align="center" marginBottom={"2rem"} gutterBottom styles={{marginTop: isMobile? "0rem" : "1rem", fontSize: isMobile? "180%": "240%", color: highContrast ? "#FFFF00" : 'inherit'}}>
         Login
       </Typography>
       <form className={classes.form} onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width:"100%" }}>
@@ -169,7 +169,7 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '', width: '90%'}}
+          style={{ marginBottom: '0.5rem',  background: highContrast ? "#fff" : '', width: '90%'}}
             InputLabelProps={{
               sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
           }}
@@ -194,7 +194,7 @@ const Login = () => {
           disabled={loading}
           sx={{
             borderRadius:'.6rem',
-            marginTop:'1.5rem',
+            marginTop: isMobile? "0.5rem":'1.5rem',
             backgroundColor: highContrast ? '#FFFF00' : '#4183ba', 
             color: highContrast ? '#000000' : '#fff', 
             fontWeight: 'bold' , 
