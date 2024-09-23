@@ -14,6 +14,7 @@ import UnauthorizedPage from "../components/staticpages/UnauthorizedPage"
 import ArticleEdit from "../components/articles/ArticleEdit"
 import Acess from "../components/staticpages/Acess"
 import Data from "../components/reports/Data"
+import Mapa from "../components/Mapa"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
   {
     path: "/acessibilidade",
     element: <Acess/>
+  },
+  {
+    path: "/mapa-da-ufcg",
+    element: <Mapa/>
   },
 
 ])

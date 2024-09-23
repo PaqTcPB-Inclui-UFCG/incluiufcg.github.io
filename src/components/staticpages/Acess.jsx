@@ -33,25 +33,39 @@ const About = () => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Header highContrast={highContrast} setHighContrast={setHighContrast} />
-        
-            <div ref={bodyRef} style={{ backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh' }}>
-                <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '' }}>
-                    <img
-                        src="/about-image.jpg"
-                        alt="Sobre a Iniciativa"
-                        title="Pessoa lendo um livro"
-                        style={{
-                            width: '100%',
-                            height: '24vw',
-                            objectFit: 'cover',
-                            marginBottom: '1rem',
-                            borderRadius: '10px'
+            <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
+            <div style={{position:'relative', width:'100%'}}>
+                        
+                <img
+                    src="/about-image.jpg"
+                    alt="Sobre a Iniciativa"
+                    title="Pessoa lendo um livro"
+                    style={{
+                        width: '100%', 
+                        height: '18vw', 
+                        objectFit: 'cover', 
+                        '@media (max-width: 600px)': { height: '60vw' },
+                    }}
+                />
+
+                <div 
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(92, 105, 114, 0.35)',  
+                            
                         }}
-                    />
-                    <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit' }}>
-                        Acessibilidade
-                    </Typography>
+                />
+
+                <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white', fontSize:{ xs: '1.5rem', sm: '2rem', md: '3rem', lg: '3.5rem'}}}>
+                     Acessibilidade
+                </Typography>
+            </div>
+
+            <div className = 'body' ref={bodyRef} style={{  backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh', padding: '3rem' }}>
                     <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF00" : 'inherit' }}>
                         O termo acessibilidade significa incluir a pessoa com deficiência na participação de atividades como o uso de produtos, serviços e informações. Alguns exemplos são os prédios com rampas de acesso para cadeira de rodas e banheiros adaptados para deficientes.          </Typography>
                     <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
@@ -83,9 +97,10 @@ const About = () => {
                             </Typography>
                         </li>
                     </ul>
-                    <Typography variant="h5" style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }} gutterBottom>
-                        Esses atalhos valem para o navegador Chrome, mas existem algumas variações para outros navegadores.
+                    <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF00" : 'inherit' }}>
+                        <strong style={{color: 'rgba(92, 105, 114, 0.9)'}}>Esses atalhos valem para o navegador Chrome, mas existem algumas variações para outros navegadores.</strong>
                     </Typography>
+                
                     <Typography variant="body1" paragraph sx={{ color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
                         Quem prefere utilizar o Internet Explorer é preciso apertar o botão Enter do seu teclado após uma das combinações acima. Portanto, para chegar ao campo de busca de interna é preciso pressionar Alt+3 e depois Enter.                    </Typography>
                     <Typography variant="body1" paragraph sx={{ color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
@@ -98,10 +113,11 @@ const About = () => {
                     <Typography variant="body1" paragraph sx={{ color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
                         Ao final desse texto, você poderá baixar alguns arquivos que explicam melhor o termo acessibilidade e como deve ser implementado nos sites da Internet.
                     </Typography>
-
-                    <Typography variant="h5" style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }} gutterBottom>
-                        Leis e decretos sobre acessibilidade:
+                    
+                    <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF00" : 'inherit' }}>
+                        <strong style={{color: 'rgba(92, 105, 114, 0.9)'}}>Leis e decretos sobre acessibilidade:</strong>
                     </Typography>
+                   
                     <ul style={{ color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
                         <li>
                             <Typography variant="body1" paragraph>
@@ -129,9 +145,7 @@ const About = () => {
                             </Typography>
                         </li>
                     </ul>
-                </Paper>
-            </div>
-
+                </div>
             <Footer highContrast={highContrast} />
         </ThemeProvider>
     );
