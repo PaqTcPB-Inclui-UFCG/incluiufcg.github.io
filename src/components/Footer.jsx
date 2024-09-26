@@ -9,8 +9,8 @@ function Footer({ highContrast }) {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   });
   return (
-    <Box component="footer" sx={{ bgcolor: highContrast ? '#000000' : '#FAFAFB', py: 3, textAlign: 'center' }}>
-      <Typography variant="body1" color="textSecondary" style={{ color: highContrast ? '#FFFF00' : '#bdbdbd' }}>
+    <Box component="footer" sx={{ bgcolor: highContrast ? '#050834' : '#FAFAFB', py: 3, textAlign: 'center' }}>
+      <Typography variant="body1" color="textSecondary" style={{ color: highContrast ? '#fffff' : '#bdbdbd', fontWeight: highContrast ? "bold": "normal" }}>
         &copy; 2024 - IncluiUFCG - UFCG. Todos os direitos reservados.
       </Typography>
     </Box>

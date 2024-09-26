@@ -7,8 +7,6 @@ import Footer  from '../Footer';
 import axios from 'axios';
 import { useHotkeys } from 'react-hotkeys-hook';
 import ENDPOINTS from '../../endPoints';
-
-
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -127,15 +125,15 @@ const Login = () => {
    
     <CssBaseline />
     <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
-      <div ref={bodyRef} style={{backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh'}}>
-      <Container sx={{minHeight: 'calc(100vh - 128px)', backgroundColor: highContrast ? "#000000" : ''}} style={{ padding: '2rem', marginBottom: '2rem', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <div ref={bodyRef} style={{backgroundColor: highContrast ? "#050834" : '', minHeight: '100vh'}}>
+      <Container sx={{minHeight: 'calc(100vh - 128px)', backgroundColor: highContrast ? "#050834" : ''}} style={{ padding: '2rem', marginBottom: '2rem', display:'flex', alignItems:'center', justifyContent:'center'}}>
       
-    <Paper className={classes.paper} elevation={3} style={{borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '', width: '40rem',}}>
-    <div style={{borderRadius: '10px  10px 0 0 ', width:'100%', height: isMobile? '4.5rem': '5rem', background:'#4183ba', margin:0,}}></div>
+    <Paper className={classes.paper} elevation={3} style={{borderRadius: '10px', backgroundColor: highContrast ? "#FFFFFF" : '', width: '40rem',}}>
+    <div style={{borderRadius: '10px  10px 0 0 ', width:'100%', height: isMobile? '4.5rem': '5rem', background: highContrast? "#D5D5D5" :'#4183ba', margin:0,}}></div>
     
     <div style={{padding:'2rem'}}>
    
-      <Typography variant="h4" color='black' align="center" marginBottom={"2rem"} gutterBottom styles={{marginTop: isMobile? "0rem" : "1rem", fontSize: isMobile? "180%": "240%", color: highContrast ? "#FFFF00" : 'inherit'}}>
+      <Typography variant="h4" color='black' fontWeight={"700"} align="center" marginBottom={"2rem"} gutterBottom styles={{ marginTop: isMobile? "0rem" : "1rem", fontSize: isMobile? "180%": "240%", color: highContrast ? "#00000" : 'inherit'}}>
         Login
       </Typography>
       <form className={classes.form} onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width:"100%" }}>
@@ -146,9 +144,9 @@ const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : '', width: '90%'}}
+          style={{ marginBottom: '1rem',  background: highContrast ? "#ffffff" : '', width: '90%'}}
             InputLabelProps={{
-              sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+              sx: { fontWeight: highContrast ? "bold": "normal" }
           }}
           sx={{
             '& fieldset': {
@@ -156,7 +154,7 @@ const Login = () => {
               borderTop: 'none', 
               borderRight: 'none', 
               borderLeft: 'none', 
-              borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
+              borderBottom: `2px solid `,
 
             },
             width: '60%',
@@ -169,9 +167,9 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={{ marginBottom: '0.5rem',  background: highContrast ? "#fff" : '', width: '90%'}}
+          style={{ marginBottom: '0.5rem', width: '90%'}}
             InputLabelProps={{
-              sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+              sx: { fontWeight: highContrast ? "bold": "normal" }
           }}
           sx={{
             '& fieldset': {
@@ -179,7 +177,7 @@ const Login = () => {
               borderTop: 'none', 
               borderRight: 'none', 
               borderLeft: 'none', 
-              borderBottom: `2px solid ${highContrast ? "#FFFF00" : 'inherit'}`,
+              borderBottom: `2px solid ${highContrast ? '': 'inherit'}`,
 
             },
             width: '60%',
@@ -195,11 +193,11 @@ const Login = () => {
           sx={{
             borderRadius:'.6rem',
             marginTop: isMobile? "0.5rem":'1.5rem',
-            backgroundColor: highContrast ? '#FFFF00' : '#4183ba', 
-            color: highContrast ? '#000000' : '#fff', 
+            backgroundColor: highContrast ? '#050834' : '#4183ba', 
+            color: highContrast ? '#FFFFF' : '#fff', 
             fontWeight: 'bold' , 
             '&:hover': {
-              backgroundColor: highContrast ? '#FFFF00' : '#0d56a6', 
+              backgroundColor: highContrast ? '#030624' : '#0d56a6', 
             }
           }}
         >

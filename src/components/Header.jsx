@@ -22,6 +22,7 @@ import { useHotkeys } from 'react-hotkeys-hook';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import "@fontsource/inter";
 
 
 
@@ -173,6 +174,7 @@ export default function Header({ highContrast, setHighContrast }) {
         boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.3)'
     };
 
+
     const titleStyle = {
         fontFamily: 'Marko One',
         fontStyle: 'normal',
@@ -189,23 +191,16 @@ export default function Header({ highContrast, setHighContrast }) {
     };
 
     const buttonStyle = {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'medium',
-        fontSize: '1.3vw',
+        fontFamily: 'Inter',
+        fontWeight: highContrast? 'bold' :'medium',
+        fontSize: '1.2vw',
         color: '#6E6D7A',
         textTransform: 'none',
         marginLeft: '2.5vw'
     };
 
-    const searchButtonStyle = {
-        ...buttonStyle,
-        position: 'relative',
-        cursor: 'pointer',
-    };
-
     const signupButtonStyle = {
         ...buttonStyle,
-        backgroundColor: '#3B4BD8',
         borderRadius: '0.67vw',
         marginLeft: '0.83vw',
         color: 'white',
@@ -281,7 +276,7 @@ export default function Header({ highContrast, setHighContrast }) {
                                     <React.Fragment>
                                         <Box style={{ margin: '1rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                             <Button sx={buttonStyle} component={Link} to="/entrar">Login</Button>
-                                            <Button style={{background: '#4183ba'}} variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
+                                            <Button style={{background: highContrast? '#050834' : '#4183ba'}} variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
                                         </Box>
                                         
                                     </React.Fragment>
