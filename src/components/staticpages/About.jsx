@@ -63,19 +63,19 @@ const About = () => {
               left: 0,
               width: '100%',
               height: '100%',
-              backgroundColor: 'rgba(92, 105, 114, 0.35)',  
+              backgroundColor: highContrast? 'FFFFF': 'rgba(92, 105, 114, 0.35)',  
              
             }}
           />
 
-          <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white', fontSize:{ xs: '1.5rem', sm: '2rem', md: '3rem', lg: '3.5rem'}}}>
+          <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white', fontSize:{ xs: '1.5rem', sm: '2rem', md: '3rem', lg: '3.5rem'}}}>
               Sobre a Iniciativa
           </Typography>
       </div>
       
-      <div className = 'body' ref={bodyRef} style={{  backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh', padding: '3rem' }}>
-          <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF00" : 'inherit' }}>
-            <strong style={{color: 'rgba(92, 105, 114, 0.9)'}}>O QUE É ENSINO INCLUSIVO?</strong>
+      <div className = 'body' ref={bodyRef} style={{color: highContrast? "FFFF":'',  backgroundColor: highContrast ? '#050834' : '', minHeight: '100vh', padding: '3rem' }}>
+          <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "rgba(255,255,255, 0.9)" : 'inherit' }}>
+            <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>O QUE É ENSINO INCLUSIVO?</strong>
           </Typography>
           <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
             A Educação Inclusiva é uma abordagem contemporânea que busca garantir o direito de todos à educação, promovendo a igualdade de oportunidades e valorizando as diversidades humanas. Seus princípios fundamentais são:
@@ -185,7 +185,7 @@ const About = () => {
 
           </ul>
           <Typography variant="h5" style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal"  }} gutterBottom>
-            <strong style={{color: 'rgba(92, 105, 114, 0.9)'}}>INCLUSÃO NA UFCG</strong>
+            <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" :'rgba(92, 105, 114, 0.9)'}}>INCLUSÃO NA UFCG</strong>
           </Typography>
           <Typography variant="body1" paragraph sx={{color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}> 
           A Universidade Federal de Campina Grande (UFCG) destaca-se por ter um dos maiores percentuais de inclusão de pessoas com deficiência (PcD) nos cursos de engenharia no Brasil, conforme revelado por um ranking da plataforma Responde Aí. O levantamento, baseado no Censo da Educação Superior entre 2016 e 2019, posiciona a UFCG em 15º lugar nacional e 5º no Nordeste, com um percentual de inclusão três vezes maior que a média nacional. Dos 3.835 estudantes de engenharia na UFCG, 57 são PcD, representando 1,5%.

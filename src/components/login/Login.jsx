@@ -155,6 +155,7 @@ const Login = () => {
               borderRight: 'none', 
               borderLeft: 'none', 
               borderBottom: `2px solid `,
+              borderBottom: `2px solid ${highContrast ? '': 'inherit'}`,
 
             },
             width: '60%',

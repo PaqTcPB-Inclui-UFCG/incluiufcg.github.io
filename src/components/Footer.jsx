@@ -10,7 +10,7 @@ function Footer({ highContrast }) {
   });
   return (
     <Box component="footer" sx={{ bgcolor: highContrast ? '#050834' : '#FAFAFB', py: 3, textAlign: 'center' }}>
-      <Typography variant="body1" color="textSecondary" style={{ color: highContrast ? '#fffff' : '#bdbdbd', fontWeight: highContrast ? "bold": "normal" }}>
+      <Typography variant="body1" color="textSecondary" style={{ color: highContrast ? '#FFFFF' : '#bdbdbd', fontWeight: highContrast ? "bold": "normal" }}>
         &copy; 2024 - IncluiUFCG - UFCG. Todos os direitos reservados.
       </Typography>
     </Box>
