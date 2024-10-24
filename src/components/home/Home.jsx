@@ -21,29 +21,6 @@ const theme = createTheme({
   },
 });
 
-const highContrastTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#000000', 
-    },
-    secondary: {
-      main: '#ffffff', 
-    },
-    background: {
-      default: '#ffffff', 
-      paper: '#000000', 
-    },
-    text: {
-      primary: '#000000', 
-      secondary: '#ffffff', 
-    },
-    yellow: {
-      main: '#050834', 
-    },
-  },
-});
-
-
 const sortOptions = [
   { value: 'recentes', label: 'Mais Recentes' },
   { value: 'alfabetica', label: 'Ordem Alfabética' },
@@ -96,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   highContrastRoot: {
-    backgroundColor: '#000000', 
+    backgroundColor: '#050834', 
   },
   divStyle: {
     display: 'flex',
@@ -222,7 +199,7 @@ const Home = () => {
           </Grid>
         </div>
         <div className={classes.divStyle}>
-        <Link  to="/base-de-conhecimento" className={classes.linkStyle} style={{ color: highContrast ?'#FFFF00' : '#bdbdbd'}}><div>Carregar mais</div></Link>
+        <Link  to="/base-de-conhecimento" className={classes.linkStyle} style={{ color: highContrast ?'#FFFF' : '#bdbdbd'}}><div>Carregar mais</div></Link>
         </div>
         <Footer highContrast={highContrast}/>
       </div>
