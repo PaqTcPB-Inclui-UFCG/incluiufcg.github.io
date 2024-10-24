@@ -98,7 +98,7 @@ const About = () => {
                         </li>
                     </ul>
                     <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF" : 'inherit' }}>
-                        <strong style={{color: 'rgb(240, 240, 240)'}}>Esses atalhos valem para o navegador Chrome, mas existem algumas variações para outros navegadores.</strong>
+                        <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>Esses atalhos valem para o navegador Chrome, mas existem algumas variações para outros navegadores.</strong>
                     </Typography>
                 
                     <Typography variant="body1" paragraph sx={{ color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
@@ -115,33 +115,33 @@ const About = () => {
                     </Typography>
                     
                     <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF" : 'inherit' }}>
-                        <strong style={{color: 'rgb(240, 240, 240)'}}>Leis e decretos sobre acessibilidade:</strong>
+                        <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>Leis e decretos sobre acessibilidade:</strong>
                     </Typography>
                    
                     <ul style={{ color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
                         <li>
                             <Typography variant="body1" paragraph>
-                                <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5296.htm" target="_blank" rel="noopener noreferrer" style={{color: '#FFF'}}>Decreto nº 5.296 de 02 de dezembro de 2004</a>
+                                <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5296.htm" target="_blank" rel="noopener noreferrer" style={{ color: highContrast ? "#FFFFFF" : 'inherit' }}>Decreto nº 5.296 de 02 de dezembro de 2004</a>
                             </Typography>
                         </li>
                         <li>
                             <Typography variant="body1" paragraph>
-                                <a href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6949.htm" target="_blank" rel="noopener noreferrer" style={{color: '#FFF'}}>Decreto nº 6.949, de 25 de agosto de 2009</a> - Promulga a Convenção Internacional sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo, assinados em Nova York, em 30 de março de 2007
+                                <a href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6949.htm" target="_blank" rel="noopener noreferrer" style={{color: highContrast ? "#FFFFFF" : 'inherit'}}>Decreto nº 6.949, de 25 de agosto de 2009</a> - Promulga a Convenção Internacional sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo, assinados em Nova York, em 30 de março de 2007
                             </Typography>
                         </li>
                         <li>
                             <Typography variant="body1" paragraph>
-                                <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm" target="_blank" rel="noopener noreferrer" style={{color: '#FFF'}}>Decreto nº 7.724, de 16 de Maio de 2012</a> - Regulamenta a Lei No 12.527, que dispõe sobre o acesso a informações.
+                                <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm" target="_blank" rel="noopener noreferrer" style={{color: highContrast ? "#FFFFFF" : 'inherit'}}>Decreto nº 7.724, de 16 de Maio de 2012</a> - Regulamenta a Lei No 12.527, que dispõe sobre o acesso a informações.
                             </Typography>
                         </li>
                         <li>
                             <Typography variant="body1" paragraph>
-                                <a href="http://www.governoeletronico.gov.br/acoes-e-projetos/e-MAG/documentos" target="_blank" rel="noopener noreferrer" style={{color: '#FFF'}}>Modelo de Acessibilidade de Governo Eletrônico</a>
+                                <a href="http://www.governoeletronico.gov.br/acoes-e-projetos/e-MAG/documentos" target="_blank" rel="noopener noreferrer" style={{color: highContrast ? "#FFFFFF" : 'inherit'}}>Modelo de Acessibilidade de Governo Eletrônico</a>
                             </Typography>
                         </li>
                         <li>
                             <Typography variant="body1" paragraph>
-                                <a href="http://www.governoeletronico.gov.br/acoes-e-projetos/e-MAG/portaria-no-3-de-07-de-maio-de-2007" target="_blank" rel="noopener noreferrer" style={{color: '#FFF'}}>Portaria nº 03, de 07 de Maio de 2007</a> - Institucionaliza o Modelo de Acessibilidade em Governo Eletrônico – e-MAG
+                                <a href="http://www.governoeletronico.gov.br/acoes-e-projetos/e-MAG/portaria-no-3-de-07-de-maio-de-2007" target="_blank" rel="noopener noreferrer" style={{color: highContrast ? "#FFFFFF" : 'inherit'}}>Portaria nº 03, de 07 de Maio de 2007</a> - Institucionaliza o Modelo de Acessibilidade em Governo Eletrônico – e-MAG
                             </Typography>
                         </li>
                     </ul>

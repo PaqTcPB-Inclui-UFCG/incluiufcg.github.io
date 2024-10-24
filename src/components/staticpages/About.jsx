@@ -74,7 +74,7 @@ const About = () => {
       </div>
       
       <div className = 'body' ref={bodyRef} style={{color: highContrast? "FFFF":'',  backgroundColor: highContrast ? '#050834' : '', minHeight: '100vh', padding: '3rem' }}>
-          <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "rgba(255,255,255, 0.9)" : 'inherit' }}>
+          <Typography variant="h5" paragraph style={{ marginBottom: '1rem',  color: highContrast ? "#FFFF" : 'inherit' }}>
             <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>O QUE É ENSINO INCLUSIVO?</strong>
           </Typography>
           <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>

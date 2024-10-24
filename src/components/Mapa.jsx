@@ -63,10 +63,10 @@ const Mapa = () => {
                     Mapa de acessibilidade
                 </Typography>
         </div>
-        <div className = 'body' ref={bodyRef} style={{  backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh', padding: '3rem' }}>
-            <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF00" : 'inherit' }}>
-                O mapa contém os principais pontos que acessíveis prensentes na UFCG.
-            </Typography>
+        <div className = 'body' ref={bodyRef} style={{   backgroundColor: highContrast ?  '#050834' : '', minHeight: '100vh', padding: '3rem' }}>
+                <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF" : 'inherit' }}>
+                        <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>O mapa contém os principais pontos de acessibilidade presentes na UFCG.</strong>
+                </Typography>
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=19gXHIp_CxSAQt-F5pCzWBnYJnX-NSvg&ehbc=2E312F" 
                 width="100%" 
                 height="480">
