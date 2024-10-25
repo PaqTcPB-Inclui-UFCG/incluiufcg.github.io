@@ -216,6 +216,7 @@ export default function Header({ highContrast, setHighContrast }) {
         }
       }, [setHighContrast]);
     const isAdmin = sessionStorage.getItem('role') === 'ADMIN';
+    
     return (
         <React.Fragment>
             <AppBar position="static" style={appBarStyle}>
