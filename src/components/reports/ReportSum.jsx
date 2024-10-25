@@ -94,9 +94,9 @@ function TotalAlunosDeficientes({ highContrast }) {
         <ReportCampus  highContrast={highContrast}/>
         </Grid>
         <Grid item xs={6}>
-        <h2 style={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Quantidade de Alunos Deficientes por Curso</h2>
+        <h2 style={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Quantidade de Alunos Deficientes por Curso</h2>
           <DataGrid
-            style={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}
+            style={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}
             rows={rows}
             columns={columns}
             localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}

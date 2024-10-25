@@ -51,7 +51,7 @@ function GraficoEvolucaoAlunosDeficientes({ highContrast }) {
 
   return (
     <div>
-      <h2 style={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Evolução da Ingresso de Estudantes com PCD por Período na UFCG</h2>
+      <h2 style={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Evolução da Ingresso de Estudantes com PCD por Período na UFCG</h2>
       <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
       Aqui está a evolução dos alunos com PCD matriculados ao longo do tempo, divididos por semestre. Esses gráficos fornecem uma visão abrangente da presença e distribuição desses alunos em diferentes períodos letivos, permitindo uma análise detalhada das tendências ao longo do tempo.</Typography >
       <Chart

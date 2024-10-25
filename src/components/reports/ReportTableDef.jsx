@@ -67,7 +67,7 @@ function TabelaDeficiencias({ highContrast }) {
         slots={{ toolbar: GridToolbar }}
         disableSelectionOnClick
         getRowId={(row) => row.id}
-        style={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}
+        style={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}
         onPageChange={handleChangePagina}
             pageSizeOptions={[5, 10,15, 25]}
             initialState={{

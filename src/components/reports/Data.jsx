@@ -64,9 +64,9 @@ function ComponentePrincipal() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header highContrast={highContrast} setHighContrast={setHighContrast} />
-      <div style={{ backgroundColor: highContrast ? "#000000" : '' }}>
-        <div style={{ padding: '2rem', marginBottom: '2rem', marginLeft: '4rem', marginRight: '4rem', backgroundColor: highContrast ? "#000000" : '' }} ref={contentRef}>
-          <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '' }}>
+      <div style={{ backgroundColor: highContrast ? '#050834' : '' }}>
+        <div style={{ padding: '2rem', marginBottom: '2rem', marginLeft: '4rem', marginRight: '4rem', backgroundColor: highContrast ? '#050834' : '' }} ref={contentRef}>
+          <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? '#050834' : '' }}>
             <div>
               <Button onClick={tirarPrint} variant="contained" color="primary" style={{ marginRight: '1rem' }}>Baixar em JPEG</Button>
               <Button onClick={gerarPDF} variant="contained" color="primary" disabled={isGeneratingPDF}>
@@ -90,7 +90,7 @@ function ComponentePrincipal() {
                         <ReportsEvolutionPerCurso highContrast={highContrast} />
                       </Grid>
                     </Grid>
-                    <Divider variant="middle" style={{ margin: '1rem 0',   marginTop: '2rem', backgroundColor: highContrast ? "#fff": "inherit" }} />
+                    <Divider variant="middle" style={{ margin: '1rem 0',   marginTop: '2rem', backgroundColor: highContrast ? '#050834': "inherit" }} />
                     <ReportDef highContrast={highContrast} />
                     <ReportSum highContrast={highContrast} />
                     <ReportMultDef highContrast={highContrast} />

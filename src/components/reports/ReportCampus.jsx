@@ -44,7 +44,7 @@ function GraficoPizzaPorCampus({ highContrast }) {
 
   return (
     <div>
-      <h2 style={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Quantidade de Alunos Deficientes por Campus</h2>
+      <h2 style={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Quantidade de Alunos Deficientes por Campus</h2>
       <Chart
         width={'100%'}
         height={'400px'}

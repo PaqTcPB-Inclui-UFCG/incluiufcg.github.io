@@ -97,10 +97,10 @@ function AlunosMultiDeficiencia({ highContrast }) {
         <Grid container spacing={3}>
             <Grid item xs={12}>
                 <Divider style={{ margin: '20px 0', marginTop: '3rem' }} />
-                <Typography variant="h4" component="div" gutterBottom sx={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
+                <Typography variant="h4" component="div" gutterBottom sx={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
                     Multiplas deficiência
                 </Typography>
-                <Typography variant="h6" gutterBottom sx={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal", marginBottom: '2rem' }}>
+                <Typography variant="h6" gutterBottom sx={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal", marginBottom: '2rem' }}>
                     Esta análise de dados examina o cenário dos alunos da UFCG que possuem múltiplas deficiências. Ela oferece insights sobre a distribuição desses alunos por curso e campus, fornecendo uma visão abrangente da situação dos alunos com múltiplas deficiências dentro da instituição.
                 </Typography>
 
