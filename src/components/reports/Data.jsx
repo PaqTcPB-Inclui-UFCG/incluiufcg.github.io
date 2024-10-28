@@ -68,8 +68,8 @@ function ComponentePrincipal() {
         <div style={{ padding: '2rem', marginBottom: '2rem', marginLeft: '4rem', marginRight: '4rem', backgroundColor: highContrast ? "#000000" : '' }} ref={contentRef}>
           <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '' }}>
             <div>
-              <Button onClick={tirarPrint} variant="contained" color="primary" style={{ marginRight: '1rem' }}>Baixar em JPEG</Button>
-              <Button onClick={gerarPDF} variant="contained" color="primary" disabled={isGeneratingPDF}>
+              <Button onClick={tirarPrint} variant="contained" style={{backgroundColor: highContrast ? "white" : '',  color: highContrast ? "#050834" : "white", marginRight: '1rem' }}>Baixar em JPEG</Button>
+              <Button onClick={gerarPDF} variant="contained" style={{backgroundColor: highContrast ? "white" : '',  color: highContrast ? "#050834" : "white"}} disabled={isGeneratingPDF}>
                 {isGeneratingPDF ? <CircularProgress size={24} color="inherit" /> : 'Gerar PDF'}
               </Button>
               <div>
