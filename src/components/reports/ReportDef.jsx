@@ -78,13 +78,13 @@ function GraficoDeficienciasMaisComuns({ highContrast }) {
 
   return (
     <div>
-      <h2 style={{color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Mapeamento das Deficiências Mais Prevalentes na UFCG</h2>
+      <h2 style={{color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>Mapeamento das Deficiências Mais Prevalentes na UFCG</h2>
       <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
       Este gráfico apresenta um mapeamento das deficiências mais prevalentes entre os estudantes da Universidade Federal de Campina Grande (UFCG). Ele oferece uma visão detalhada das principais deficiências encontradas na comunidade acadêmica, permitindo uma análise aprofundada da diversidade de necessidades especiais presentes na instituição. Além disso, você pode filtrar os resultados por curso e campus para obter uma compreensão ainda mais precisa da distribuição dessas deficiências em diferentes áreas da universidade.      </Typography >
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <FormControl sx={{ minWidth: 200, marginRight: '1rem', background: highContrast ? "#FFFFFF" : 'inherit' }}>
-            <InputLabel sx={{backgroundColor: highContrast ? "#FFFFFF":'inherit', fontWeight: highContrast ? "bold": "normal"}} id="curso-label">Filtrar por Curso:</InputLabel>
+            <InputLabel sx={{backgroundColor: highContrast ? "#FFFFFF":'inherit', fontWeight: highContrast ? "bold": "normal", color: highContrast? '#050834' : ""}} id="curso-label">Filtrar por Curso:</InputLabel>
             <Select
               labelId="curso-label"
               id="curso"
@@ -98,7 +98,7 @@ function GraficoDeficienciasMaisComuns({ highContrast }) {
             </Select>
           </FormControl>
           <FormControl sx={{ minWidth: 200, background: highContrast ? "#FFFFFF" : 'inherit' }}>
-            <InputLabel sx={{backgroundColor: highContrast ? "#FFFFFF":'inherit', fontWeight: highContrast ? "bold": "normal"}} id="campus-label">Filtrar por Campus:</InputLabel>
+            <InputLabel sx={{backgroundColor: highContrast ? "#FFFFFF":'inherit', fontWeight: highContrast ? "bold": "normal", color: highContrast? '#050834': ''}} id="campus-label">Filtrar por Campus:</InputLabel>
             <Select
               labelId="campus-label"
               id="campus"

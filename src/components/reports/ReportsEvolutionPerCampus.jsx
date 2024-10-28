@@ -67,11 +67,11 @@ function GraficoEvolucaoAlunosDeficientes({ highContrast }) {
 
   return (
     <div>
-      <h2 style={{ color: highContrast ? "#ffff00" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>Evolução de Ingresso de Alunos Deficientes na UFCG por Campus</h2>
+      <h2 style={{ color: highContrast ? "#ffff" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>Evolução de Ingresso de Alunos Deficientes na UFCG por Campus</h2>
       <Typography variant="body1" paragraph style={{ marginBottom: '1rem',color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }}>
         Explore a Evolução da Matrícula de Estudantes com PCD (Pessoas com Deficiência) na UFCG (Universidade Federal de Campina Grande), detalhada por Campus. </Typography >
       <FormControl sx={{ minWidth: 200, background: highContrast ? "#FFFFFF" : 'inherit' }}>
-        <InputLabel sx={{ backgroundColor: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }} id="campus-label">Filtrar por Campus:</InputLabel>
+        <InputLabel sx={{ backgroundColor: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal", color: highContrast? '#050834' : '' }} id="campus-label">Filtrar por Campus:</InputLabel>
         <Select
           value={campusSelecionado}
           onChange={handleChangeCampus}
