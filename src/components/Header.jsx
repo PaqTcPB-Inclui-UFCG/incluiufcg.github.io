@@ -223,7 +223,9 @@ export default function Header({ highContrast, setHighContrast }) {
                 <Toolbar>
                     <Typography variant="h6" sx={{ ...titleStyle, ...(isMobile && { fontSize: '4vw' }) }}
                         component={Link} to="/">
-                        IncluiUFCG
+                        <img src='./title.png' 
+                        alt="incluiUFCG" 
+                        style={{ width: isMobile ? '20vh' : '30vh', height: 'auto' }}   />
                     </Typography>
                     {isMobile ? (
                         <IconButton
