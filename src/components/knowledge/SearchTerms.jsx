@@ -213,7 +213,7 @@ const BaseDeConhecimento = () => {
               </IconButton>
               </Paper>
               <div style = {{marginTop: '1.2vw', marginLeft: '1vw', marginRight: 'auto'}}>
-              <Typography variant="subtitle2" gutterBottom sx={{marginBottom: 'none', color: highContrast ?'#FFFF00' : '#FFFFF'}}><strong>Pesquisa Avançada</strong></Typography>
+              <Typography variant="subtitle2" gutterBottom sx={{marginBottom: 'none', color: highContrast ?'white' : '#FFFFF'}}><strong>Pesquisa Avançada</strong></Typography>
             <FormControlLabel
               control={
                 <Switch

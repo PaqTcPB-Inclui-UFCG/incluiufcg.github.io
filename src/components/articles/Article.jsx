@@ -230,10 +230,10 @@ const Article = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header highContrast={highContrast} setHighContrast={setHighContrast} />
-      <div style={{ backgroundColor: highContrast ? "#191919" : '', marginTop: 0 }}>
-        <div ref={bodyRef} style={{ padding: '2rem', marginBottom: '2rem', marginLeft: '10vw', marginRight: '10vw', background: highContrast ? "#191919" : '' }}>
+      <div style={{ backgroundColor: highContrast ? '#050834' : '', marginTop: 0 }}>
+        <div ref={bodyRef} style={{ padding: '2rem', marginBottom: '2rem', marginLeft: '10vw', marginRight: '10vw', background: highContrast ? "#161839" : '' }}>
           {articleData && (
-            <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '' }}>
+            <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? '#03051E' : '' }}>
               {isAdmin && (
                 <Grid item>
                   <Button startIcon={<EditIcon />} onClick={handleEditArticle} variant="contained" color="primary" style={{ textAlign: 'left', marginBottom: '1.3rem' }}>
@@ -273,8 +273,8 @@ const Article = () => {
               </Typography>
               <ul>
                 {attachments.map(attachment => (
-                  <li key={attachment.sysId} style={{ color: highContrast ? "#FFFF00" : "inherit" }}>
-                    <a style={{ color: highContrast ? "#FFFF00" : "inherit" }} href={`data:${attachment.contentType};base64,${attachment.file}`} download={attachment.name}>
+                  <li key={attachment.sysId} style={{ color: highContrast ? "white" : "inherit" }}>
+                    <a style={{ color: highContrast ? "white" : "inherit" }} href={`data:${attachment.contentType};base64,${attachment.file}`} download={attachment.name}>
                       {attachment.name}
                     </a>
                   </li>
