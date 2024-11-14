@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0  --port 5173",
-    "install": "npm install",
+    "install": "npm install --legacy-peer-deps",
     "start": "vite preview",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
